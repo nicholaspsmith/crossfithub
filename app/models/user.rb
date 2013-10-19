@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
   has_many :memberships
-  belongs_to :gym, through: :memberships
+  has_many :gyms, through: :memberships
 end
