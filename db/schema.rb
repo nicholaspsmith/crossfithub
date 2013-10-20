@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(version: 20131020023757) do
 
   create_table "wods", force: true do |t|
     t.string   "name"
-    t.integer  "exercise_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
 end
