@@ -8,6 +8,9 @@
 </head>
 <body>
 <h1>CrossfitHub</h1>
+
+<p class='notice'> <%= notice unless notice.blank? %>
+<p class='alert'> <%= alert unless alert.blank? %>
 <%= yield %>
 
 </body>
