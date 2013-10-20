@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password
       t.string :user_type #member, coach, or admin
+      t.string :img_url
 
       t.timestamps
     end

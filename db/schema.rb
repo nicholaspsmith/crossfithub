@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20131020023757) do
     t.string   "email"
     t.string   "password"
     t.string   "user_type"
+    t.string   "img_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
