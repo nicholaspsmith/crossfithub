@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 20131020180542) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
+    t.string   "name",                                null: false
     t.string   "user_type"
-    t.string   "img_url"
+    t.string   "profile_pic",                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  default: "", null: false
