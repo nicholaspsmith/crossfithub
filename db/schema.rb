@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019231307) do
+ActiveRecord::Schema.define(version: 20131020023757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "badge_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "badge_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "badges", force: true do |t|
+    t.string   "name"
+    t.string   "img_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ex_wods", force: true do |t|
     t.integer  "exercise_id"
@@ -26,7 +40,6 @@ ActiveRecord::Schema.define(version: 20131019231307) do
   create_table "exercises", force: true do |t|
     t.string   "name"
     t.integer  "reps"
-    t.integer  "wod_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
