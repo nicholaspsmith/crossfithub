@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20131019231307) do
   end
 
   create_table "exercises", force: true do |t|
-    t.string   "exercise_name"
+    t.string   "name"
     t.integer  "reps"
     t.integer  "wod_id"
     t.datetime "created_at"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20131019231307) do
   end
 
   create_table "gyms", force: true do |t|
-    t.string   "gym_name"
+    t.string   "name"
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20131019231307) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "username"
+    t.string   "name"
     t.string   "email"
     t.string   "password"
     t.string   "user_type"
@@ -63,10 +63,9 @@ ActiveRecord::Schema.define(version: 20131019231307) do
   end
 
   create_table "wods", force: true do |t|
-    t.string   "wod_name"
+    t.string   "name"
     t.integer  "exercise_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 end
