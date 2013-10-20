@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20131019231307) do
   end
 
   create_table "exercises", force: true do |t|
-    t.string   "exercise"
+    t.string   "exercise_name"
+    t.integer  "reps"
     t.integer  "wod_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -63,7 +64,6 @@ ActiveRecord::Schema.define(version: 20131019231307) do
 
   create_table "wods", force: true do |t|
     t.string   "wod_name"
-    t.integer  "reps"
     t.integer  "exercise_id"
     t.datetime "created_at"
     t.datetime "updated_at"
