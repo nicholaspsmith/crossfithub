@@ -6,6 +6,8 @@ wod.save
 
 
 gym = Gym.create(name:"Crossfit Central")
-user = User.create(name:"Nick Smith",img_url:"http://www.placekitten.com/200/200")
-gym.users << user
+nick = User.create(name:"Nick Smith",img_url:"http://www.placekitten.com/200/200")
+justin = User.create(name:"Justin Blaisdell",img_url:"http://www.placekitten.com/g/200/200")
+gym.users << nick
+gym.users << justin
 gym.save
