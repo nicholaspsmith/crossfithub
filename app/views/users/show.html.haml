@@ -1,6 +1,7 @@
 
 
-=image_tag @user.img_url
+=image_tag @user.profile_pic
 %h3= @user.name
-%p- @user.wods.each do |wod|
+
+- @user.wods.each do |wod|
   %p= wod.name

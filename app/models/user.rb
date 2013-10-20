@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :memberships
   has_many :gyms, through: :memberships
+
+  has_many :wods, through: :gyms
 end

@@ -23,7 +23,7 @@
       %ul.title-area
         %li.name
           %h1
-            %a{href: "#"} CrossFitHub
+            = link_to "CrossFitHub", root_path
         %li.toggle-topbar.menu-icon
           %a{href: "#"}
             %span Menu
@@ -35,10 +35,10 @@
           %li
             %a{href: "#"} Settings
 
-    = unless notice.blank?
-      %p.notice= notice
-    = unless alert.blank?
-      %p.alert= alert
+    %p.notice= notice unless notice.blank?
+      
+    %p.alert= alert unless alert.blank?
+      
 
     = yield
     = javascript_include_tag "application"
