@@ -34,5 +34,11 @@
           %li.divider
           %li
             %a{href: "#"} Settings
+
+    = unless notice.blank?
+      %p.notice= notice
+    = unless alert.blank?
+      %p.alert= alert
+
     = yield
     = javascript_include_tag "application"
