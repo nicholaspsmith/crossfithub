@@ -32,6 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'compass-rails'
 gem 'zurb-foundation'
 
 # Use ActiveModel has_secure_password
