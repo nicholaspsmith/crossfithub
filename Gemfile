@@ -36,6 +36,10 @@ gem 'compass-rails', '~> 2.0.alpha.0'
 gem 'zurb-foundation'
 gem 'devise'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'fb_graph'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
