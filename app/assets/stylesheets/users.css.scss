@@ -2,14 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.timeline-block {
-  background: #333;
-  color: white;
-  padding: .5em;
-  margin-bottom: 1em;
+%cf {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
-.timeline-block-details {
+.timeline-block {
+  background: #eff;
+  border: 1px solid #9aa;
+  color: #233;
+  padding: .5rem;
+  margin-bottom: 1rem;
+  @extend %cf;
+}
+
+.timeline-details {
   opacity: .5;
   font-style: italic;
+  font-size: .8rem;
+  line-height: 1.5rem;
+}
+
+.timeline-comment {
+  @extend %cf;
 }
