@@ -11,6 +11,16 @@ pushups30 = Exercise.create(name: "Pushup", reps: 30)
 situps40 = Exercise.create(name: "Situp", reps: 40)
 squats50 = Exercise.create(name: "Squat", reps: 50)
 
+pullups5 = Exercise.create(name: "Pullup", reps: 5)
+pushups10 = Exercise.create(name: "Pushup", reps: 10)
+squats15 = Exercise.create(name: "Squat", reps: 15)
+
+deadlift225lbs21 = Exercise.create(name:"Deadlift",weight: 225)
+handstandpushups21 = Exercise.create(name:"Handstand pushups")
+deadlift225lbs15 = Exercise.create(name:"Deadlift",weight: 225)
+handstandpushups15 = Exercise.create(name:"Handstand pushups")
+deadlift225lbs9 = Exercise.create(name:"Deadlift",weight: 225)
+handstandpushups9 = Exercise.create(name:"Handstand pushups")
 
 
 # WODs
@@ -30,11 +40,29 @@ barbara.exercises << squats50
 barbara.rounds = 5
 barbara.save
 
+chelsea = Wod.create(name:"Chelsea")
+chelsea.exercises << pullups5
+chelsea.exercises << pushups10
+chelsea.exercises << squats15
+chelsea.rounds = 1
+chelsea.description = "Every minute on the minute for 30 minutes"
+chelsea.save
+
+
+diane = Wod.create(name:"Diane")
+diane.exercises << deadlift225lbs21
+diane.exercises << handstandpushups21
+diane.exercises << deadlift225lbs15
+diane.exercises << handstandpushups15
+diane.exercises << deadlift225lbs9
+diane.exercises << handstandpushups9
+diane.rounds = 1
+diane.save
 
 
 # Gyms
-gym = Gym.create(name:"Crossfit Central")
-gym2 = Gym.create(name:"Dane's Body Shop")
+gym = Gym.create(name:"Crossfit Central",location:"6205-A Burnet Road")
+gym2 = Gym.create(name:"Dane's Body Shop",location:"4227 Guadalupe St  Austin, TX 78751")
 
 # Users
 nick = User.create(name:"Nick Smith",profile_pic:"http://www.placekitten.com/200/200",  user_type: "coach", email: "nick@gmail.com", password: "password1")
@@ -51,6 +79,7 @@ gym.users << justin
 # Add WODs to gym
 gym.wods << barbara
 gym.wods << angie
+gym.wods << diane
 gym.save
 
 # Add users(members) to gym2
@@ -59,6 +88,9 @@ gym2.users << clare
 gym2.users << lynda
 # Add WODs to gym2
 gym2.wods << angie
+gym2.wods << barbara
+gym2.wods << chelsea
+gym2.wods << diane
 gym2.save
 
 
