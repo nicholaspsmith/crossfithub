@@ -1,6 +1,4 @@
 # Exercises
-burpees100 = Exercise.create(name: "Burpee", reps: 100)
-
 pushups100 = Exercise.create(name: "Pushup", reps: 100)
 pullups100 = Exercise.create(name: "Pullup", reps: 100)
 situps100 = Exercise.create(name: "Situp", reps: 100)
@@ -81,6 +79,8 @@ gym.wods << barbara
 gym.wods << angie
 gym.wods << diane
 gym.save
+
+
 
 # Add users(members) to gym2
 gym2.users << bonnie
