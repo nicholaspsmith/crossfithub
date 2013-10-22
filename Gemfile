@@ -38,7 +38,7 @@ gem 'devise'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'fb_graph'
+# gem 'fb_graph'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
