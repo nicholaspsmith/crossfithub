@@ -60,6 +60,10 @@ ActiveRecord::Schema.define(version: 20131020180542) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
     t.string   "name",                                null: false
     t.string   "user_type"
     t.string   "profile_pic",                         null: false
