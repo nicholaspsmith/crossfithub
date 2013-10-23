@@ -49,3 +49,6 @@ badge.save
 badge2.save
 
 # Create Votes
+vote = Vote.create(kind:"High-Five")
+vote.user = nick
+vote.save
