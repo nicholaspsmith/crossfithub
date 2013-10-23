@@ -16,35 +16,25 @@ ActiveRecord::Schema.define(version: 20131023191421) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "badge_users", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "badge_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "badges", force: true do |t|
     t.string   "name"
     t.string   "img_url"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "comments", force: true do |t|
     t.text     "text"
+    t.integer  "user_id"
+    t.integer  "completion_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "completions", force: true do |t|
     t.time     "time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "ex_wods", force: true do |t|
-    t.integer  "exercise_id"
-    t.integer  "wod_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -53,6 +43,8 @@ ActiveRecord::Schema.define(version: 20131023191421) do
     t.string   "name"
     t.integer  "reps"
     t.integer  "weight"
+    t.string   "description"
+    t.integer  "wod_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -74,8 +66,7 @@ ActiveRecord::Schema.define(version: 20131023191421) do
 
   create_table "users", force: true do |t|
     t.string   "name",                                null: false
-    t.string   "user_type"
-    t.string   "profile_pic",                         null: false
+    t.string   "profile_pic"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  default: "", null: false
@@ -100,17 +91,13 @@ ActiveRecord::Schema.define(version: 20131023191421) do
     t.integer  "completion_id"
   end
 
-  create_table "wod_gyms", force: true do |t|
-    t.integer  "wod_id"
-    t.integer  "gym_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "wods", force: true do |t|
     t.string   "name"
     t.integer  "rounds"
     t.string   "description"
+    t.integer  "exercises_id"
+    t.integer  "gym_id"
+    t.integer  "completion_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

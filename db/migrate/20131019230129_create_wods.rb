@@ -4,6 +4,9 @@ class CreateWods < ActiveRecord::Migration
       t.string :name
       t.integer :rounds
       t.string :description
+      t.references :exercises
+      t.references :gym
+      t.references :completion
 
       t.timestamps
     end
