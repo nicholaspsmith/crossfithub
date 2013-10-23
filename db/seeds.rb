@@ -97,3 +97,9 @@ gym2.save
 vote = Vote.create(kind: 'up')
 vote.completion = Completion.create(time: Time.now)
 vote.save
+
+# Add completion and up comment (TODO: needs to be associated with user)
+comment = Comment.create(text: 'Cool story bro, tell it again.')
+comment.completion = Completion.create(time: Time.now)
+comment.save
+
