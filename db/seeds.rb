@@ -52,3 +52,8 @@ badge2.save
 vote = Vote.create(kind:"High-Five")
 vote.user = nick
 vote.save
+
+# Add completion and up comment (TODO: needs to be associated with user)
+comment = Comment.create(text: 'Cool story bro, tell it again.')
+comment.completion = Completion.create(time: Time.now)
+comment.save
