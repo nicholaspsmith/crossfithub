@@ -93,10 +93,7 @@ gym2.wods << chelsea
 gym2.wods << diane
 gym2.save
 
-
-
-
-
-
-
-
+# Add completion and up vote (TODO: needs to be associated with user)
+vote = Vote.create(kind: 'up')
+vote.completion = Completion.create(time: Time.now)
+vote.save

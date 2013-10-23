@@ -11,7 +11,7 @@
     - 5.times do
       .timeline-block
         .large-3.small-3.columns
-          =image_tag @user.profile_pic
+          =image_tag @users.find(1).profile_pic
         .large-9.small-9.columns
           = "#{@user.name} completed Fran in 2 minutes and 42 seconds."
           .timeline-details Oct 20 2013 at 12:14 PM
@@ -22,11 +22,11 @@
           .timeline-comments
             .timeline-comment
               .large-2.small-2.columns
-                =image_tag @user.profile_pic
+                =image_tag @users.find(2).profile_pic
               .large-10.small-10.columns
                 .timeline-comment Hey man, good job!
             .timeline-comment
               .large-2.small-2.columns
-                =image_tag @user.profile_pic
+                =image_tag @users.find(3).profile_pic
               .large-10.small-10.columns
                 .timeline-comment Cool story bro

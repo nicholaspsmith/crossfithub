@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
   has_many :gyms, through: :memberships
 
   has_many :wods, through: :gyms
+  has_many :votes
+  has_many :comments
+  has_many :completions
 end
