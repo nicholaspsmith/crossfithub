@@ -102,4 +102,3 @@ vote.save
 comment = Comment.create(text: 'Cool story bro, tell it again.')
 comment.completion = Completion.create(time: Time.now)
 comment.save
-
