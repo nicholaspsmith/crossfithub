@@ -27,10 +27,12 @@ membership.save
 
 # Create Completions
 completion = Completion.create(time:'04:00:00')
-# Associate completion with user
-completion.user = nick
+# Associate completion with users
 completion.wod = fran # TODO: Add wod_id.
 completion.save
+# associate completion with user
+nick.completions << completion
+nick.save
 
 # Create Comments
 comment = Comment.new
@@ -38,6 +40,8 @@ comment.user = nick
 comment.completion = completion
 comment.text = "Nice job finishing Fran, Nick!"
 comment.save
+
+
 
 # Create Badges
 badge = Badge.create(name:"Fran Badge")
