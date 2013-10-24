@@ -16,7 +16,10 @@ danes.wods << fran
 danes.save
 
 # Create Users
-nick = User.create(name:"Nick Smith",profile_pic:"doesntmatter.png",email:"npsmith1990@gmail.com",encrypted_password:"doesntmatter",sign_in_count:0)
+nick = User.create(name:"Nick Smith",profile_pic:"http://placekitten.com/g/280/150",email:"npsmith1990@gmail.com",password:"a;sldkfjgh",sign_in_count:0)
+justin = User.create(name:"Justin Blaisdell",profile_pic:"http://placekitten.com/280/150",email:"jsblaisdell@gmail.com",password:"password",sign_in_count:0)
+nicole = User.create(name:"Damnit Pank",profile_pic:"http://placekitten.com/200/200",email:"damnit@gmail.com",password:"password",sign_in_count:0)
+
 # Create Memberships
 membership = Membership.create()
 # Associate Gym and Member through Membership
