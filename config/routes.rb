@@ -1,5 +1,5 @@
 Crossfithub::Application.routes.draw do
-  devise_for :users
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: 'omniauth_callbacks'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,6 +8,11 @@ Crossfithub::Application.routes.draw do
   root 'users#index'
   
   get 'users/:id' => 'users#show', as: :user
+
+  #match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+
+  #match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
