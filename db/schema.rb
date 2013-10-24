@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20131023222808) do
     t.integer  "completion_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "completion_id"
   end
 
   create_table "completions", force: true do |t|

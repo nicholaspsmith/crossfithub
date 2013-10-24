@@ -25,16 +25,15 @@ membership.gym = danes
 membership.role = "admin"
 membership.save
 
-
 # Create Completions
 completion = Completion.create(time:'04:00:00')
 # Associate completion with user
 completion.user = nick
-completion.wod = fran
+completion.wod = fran # TODO: Add wod_id.
 completion.save
 
 # Create Comments
-comment = Comment.create()
+comment = Comment.new
 comment.user = nick
 comment.completion = completion
 comment.text = "Nice job finishing Fran, Nick!"
@@ -50,10 +49,6 @@ badge2.save
 
 # Create Votes
 vote = Vote.create(kind:"High-Five")
+vote.completion = completion
 vote.user = nick
 vote.save
-
-# Add completion and up comment (TODO: needs to be associated with user)
-comment = Comment.create(text: 'Cool story bro, tell it again.')
-comment.completion = Completion.create(time: Time.now)
-comment.save
