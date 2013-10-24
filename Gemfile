@@ -38,7 +38,7 @@ gem 'devise'
 gem 'figaro'
 
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.0'
 # gem 'fb_graph'
 
 # Use ActiveModel has_secure_password

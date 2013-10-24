@@ -5,11 +5,11 @@ class CreateUsers < ActiveRecord::Migration
       t.string :uid
       t.string :oauth_token
       t.datetime :oauth_expires_at
-      t.string :name, :null => false
-      t.string :email, :null => false
-      t.string :password, :null => false
+      t.string :name
+      t.string :email
+      t.string :password
       t.string :user_type #coach or admin (null = regular member)
-      t.string :profile_pic, :null => false
+      t.string :profile_pic
 
 
       t.timestamps
