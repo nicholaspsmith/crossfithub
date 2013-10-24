@@ -1,30 +1,61 @@
-# Exercises
-ex1 = Exercise.create(name: "Pushup", reps: 20)
+# Create Gyms
+danes = Gym.create(name:"Dane's Body Shop",location:"300 Fake St")
 
-# WODs
-wod = Wod.create(name:"Fran")
-wod.exercises << ex1
-wod.save
+# Create Exercises
+pushups = Exercise.create(name:"pushups",reps:30,description:"Puts your hands on the ground and push yourself up")
 
-# Gyms
-gym = Gym.create(name:"Crossfit Central")
-gym2 = Gym.create(name:"Dane's Body Shop")
+# Create WODS
+fran = Wod.create(name:"Fran",rounds:1,description:"A hard ass workout")
 
-# Users
-nick = User.create(name:"Nick Smith",profile_pic:"http://www.placekitten.com/200/200",  user_type: "coach", email: "nick@gmail.com", password: "password1")
-nicole = User.create(name:"Nicole Pank",profile_pic:"http://www.placekitten.com/225/225", user_type: "admin",  email: "nicole@gmail.com", password: "password2")
-justin = User.create(name:"Justin Blaidsell",profile_pic:"http://www.placekitten.com/230/230",  email: "justin@gmail.com", password: "password3")
-bonnie = User.create(name:"Bonnie Mattson",profile_pic:"http://www.placekitten.com/g/200/200",  email: "bonnie@gmail.com", password: "password4")
-clare = User.create(name:"Clare Glinka",profile_pic:"http://www.placekitten.com/g/225/225",  email: "clare@gmail.com", password: "password5")
-lynda = User.create(name:"Lynda Wellhausen",profile_pic:"http://www.placekitten.com/g/230/230",  email: "lynda@gmail.com", password: "password6")
+# Add Exercises to WODS
+fran.exercises << pushups
+fran.save
 
-gym.users << nick
-gym.users << nicole
-gym.users << justin
-gym.save
+# Add WODS to gyms
+danes.wods << fran
+danes.save
+
+# Create Users
+nick = User.create(name:"Nick Smith",profile_pic:"http://placekitten.com/g/280/150",email:"npsmith1990@gmail.com",password:"a;sldkfjgh",sign_in_count:0)
+justin = User.create(name:"Justin Blaisdell",profile_pic:"http://placekitten.com/280/150",email:"jsblaisdell@gmail.com",password:"password",sign_in_count:0)
+nicole = User.create(name:"Damnit Pank",profile_pic:"http://placekitten.com/200/200",email:"damnit@gmail.com",password:"password",sign_in_count:0)
+
+# Create Memberships
+membership = Membership.create()
+# Associate Gym and Member through Membership
+membership.user = nick
+membership.gym = danes
+membership.role = "admin"
+membership.save
+
+# Create Completions
+completion = Completion.create(time:'04:00:00')
+# Associate completion with users
+completion.wod = fran # TODO: Add wod_id.
+completion.save
+# associate completion with user
+nick.completions << completion
+nick.save
+
+# Create Comments
+comment = Comment.new
+comment.user = nick
+comment.completion = completion
+comment.text = "Nice job finishing Fran, Nick!"
+comment.save
 
 
-gym2.users << bonnie
-gym2.users << clare
-gym2.users << lynda
-gym2.save
+
+# Create Badges
+badge = Badge.create(name:"Fran Badge")
+badge2 = Badge.create(name:"Cindy Badge")
+badge.user = nick
+badge2.user = nick
+badge.save
+badge2.save
+
+# Create Votes
+vote = Vote.create(kind:"High-Five")
+vote.completion = completion
+vote.user = nick
+vote.save

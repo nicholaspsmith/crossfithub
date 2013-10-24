@@ -1,6 +1,12 @@
 %p 
+  Welcome:
+  =@name
+
+%p
   %strong Listing all users
 
 
 -@users.each do |user|
   %p=link_to user.name, user
+
+

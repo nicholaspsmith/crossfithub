@@ -1,3 +1,31 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+%cf {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.timeline-block {
+  background: #eff;
+  border: 1px solid #9aa;
+  color: #233;
+  padding: .5rem;
+  margin-bottom: 1rem;
+  @extend %cf;
+}
+
+.timeline-details {
+  opacity: .5;
+  font-style: italic;
+  font-size: .8rem;
+  line-height: 1.5rem;
+}
+
+.timeline-comment {
+  @extend %cf;
+}

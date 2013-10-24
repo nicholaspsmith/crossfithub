@@ -1,12 +1,17 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  
+  # Uncomment before deployment
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
-  has_many :memberships
-  has_many :gyms, through: :memberships
 
-  has_many :wods, through: :gyms
+ has_many :badges
+ has_many :memberships
+ has_many :gyms, through: :memberships
+ has_many :completions
+ has_many :votes
+ has_many :comments
+
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -59,4 +64,6 @@ class User < ActiveRecord::Base
       super
     end
   end
+
+
 end

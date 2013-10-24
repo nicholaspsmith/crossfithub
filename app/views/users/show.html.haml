@@ -1,7 +1,33 @@
 
+.row
+  .large-3.columns
+    =image_tag @user.profile_pic
+    %h3= @user.name
 
-=image_tag @user.profile_pic
-%h3= @user.name
+    - @user.completions.each do |completion|
+      %p= completion.wod.name
+      =# completion.wod.times
 
-- @user.wods.each do |wod|
-  %p= wod.name
+  .large-9.columns
+    - 5.times do
+      .timeline-block
+        .large-3.small-3.columns
+          =image_tag @user.profile_pic
+        .large-9.small-9.columns
+          = "#{@user.name} completed Fran in 2 minutes and 42 seconds."
+          .timeline-details Oct 20 2013 at 12:14 PM
+          %input{:type => "text"}
+          %a{:href => "#"} High-five!
+          %span 3 people gave you a high-five!
+          %hr/
+          .timeline-comments
+            .timeline-comment
+              .large-2.small-2.columns
+                =image_tag @users.find(2).profile_pic
+              .large-10.small-10.columns
+                .timeline-comment Hey man, good job!
+            .timeline-comment
+              .large-2.small-2.columns
+                =image_tag @users.find(3).profile_pic
+              .large-10.small-10.columns
+                .timeline-comment Cool story bro
