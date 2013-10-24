@@ -15,10 +15,10 @@
           %input{:type => "text"}
           %a{:href => "#"} High five!
           - completion
-          %span= "#{completion.votes.count} people high fived you!"
+          %span= "#{User.vote_count(completion.votes, 'High-Five')} people high fived you!"
           %br/
           %a{:href => "#"} Shame
-          %span= "#{completion.votes.count} people shamed you!"
+          %span= "#{User.vote_count(completion.votes, 'Shame')} people shamed you!"
           %hr/
           .timeline-comments
             - completion.comments.each do |comment|
