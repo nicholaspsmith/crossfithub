@@ -7,7 +7,7 @@ Crossfithub::Application.routes.draw do
   # root 'welcome#index'
   root 'users#index'
   
-  get 'users/:id' => 'users#show', as: :userd
+  get 'users/:id' => 'users#show', as: :user
 
   #match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
