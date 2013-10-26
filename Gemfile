@@ -55,3 +55,12 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'haml-rails'
 gem 'hirb'
+
+group :development do
+  gem 'rspec-rails', '2.13.1'
+end
+
+group :test do
+  gem 'selenium-webdriver', '2.35.1'
+  gem 'capybara', '2.1.0'
+end

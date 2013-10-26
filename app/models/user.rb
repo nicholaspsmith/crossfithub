@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
  has_many :completions
  has_many :votes
  has_many :comments
+ has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+ has_many :followers, :through => :relationships, :source => :follower
+ has_many :followed_users, :through => :relationships, :source => :followed
 
 
   def self.from_omniauth(auth)
