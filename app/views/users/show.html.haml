@@ -3,6 +3,14 @@
   .large-3.columns
     =image_tag @user.profile_pic
     %h3= @user.name
+    %hr/
+    %h4 New Workout:
+    = form_for(@completion) do |f|
+      .field
+        = f.label :time
+        = f.text_field :time
+      .actions
+        = f.submit "Save"
 
   .large-9.columns
     - @user.completions.each do |completion|

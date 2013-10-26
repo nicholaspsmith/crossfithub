@@ -6,8 +6,18 @@ Crossfithub::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'users#index'
-  
-  get 'users/:id' => 'users#show', as: :user
+
+  resources :users do
+    resources :completions
+  end
+  resources :completions
+
+  post 'user/:id' => 'completions#create'
+
+  # get 'users/:id' => 'users#show', as: :user
+
+  # get 'users/:id' => 'users#show', as: :completions
+  # post 'users/:id/completion' => 'completions#show'
 
   #match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
@@ -48,7 +58,7 @@ Crossfithub::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
