@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :followers, :through => :relationships, :source => :follower
   has_many :followed_users, :through => :relationships, :source => :followed
 
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 50 }
   validates :password, presence: true
 
   def self.from_omniauth(auth)
