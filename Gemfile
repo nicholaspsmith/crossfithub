@@ -56,6 +56,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'haml-rails'
 gem 'hirb'
 
+gem 'better_errors'
+gem 'binding_of_caller'
+
 group :development do
   gem 'rspec-rails', '2.13.1'
 end

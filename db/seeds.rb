@@ -59,3 +59,8 @@ vote = Vote.create(kind:"High-Five")
 vote.completion = completion
 vote.user = nick
 vote.save
+
+# Create followers
+# nick follows nicole
+Relationship.create(follower:nick,followed:nicole)
+

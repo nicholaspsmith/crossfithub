@@ -1,19 +1,19 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-
-  # Uncomment before deployment
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
- has_many :badges
- has_many :memberships
- has_many :gyms, through: :memberships
- has_many :completions
- has_many :votes
- has_many :comments
- has_many :relationships, foreign_key: "follower_id", dependent: :destroy
- has_many :followers, :through => :relationships, :source => :follower
- has_many :followed_users, :through => :relationships, :source => :followed
+  has_many :badges
+  has_many :memberships
+  has_many :gyms, through: :memberships
+  has_many :completions
+  has_many :votes
+  has_many :comments
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followers, :through => :relationships, :source => :follower
+  has_many :followed_users, :through => :relationships, :source => :followed
 
+  validates :name, presence: true
+  validates :password, presence: true
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
