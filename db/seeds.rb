@@ -55,10 +55,15 @@ badge.save
 badge2.save
 
 # Create Votes
-vote = Vote.create(kind:"High-Five")
+vote = Vote.create(:kind => Vote::VOTE_KIND[:thumbs_up])
 vote.completion = completion
 vote.user = nick
 vote.save
+
+vote2 = Vote.create(:kind => Vote::VOTE_KIND[:thumbs_down])
+vote.completion = completion
+vote2.user = justin
+vote2.save
 
 # Create followers
 # nick follows nicole
