@@ -40,35 +40,35 @@ membership.save
 
 # Create Completions
 completion = Completion.create
-completion.wod = fran # TODO: Add wod_id.
+completion.wod_id = fran.id
 completion.milliseconds = 152000
 completion.save
 
 completion2 = Completion.create
-completion2.wod = annie
+completion2.wod_id = annie.id
 completion2.milliseconds = 234394
 completion2.save
 
 completion3 = Completion.create
-completion3.wod = barbara
+completion3.wod_id = barbara.id
 completion3.milliseconds = 137539
 completion3.save
 
 
 completion4 = Completion.create
-completion4.wod = chelsea
+completion4.wod_id = barbara.id
 completion4.milliseconds = 139502
 completion4.save
 
 
 completion5 = Completion.create
-completion5.wod = cindy
+completion5.wod_id = cindy.id
 completion5.milliseconds = 1239585
 completion5.save
 
 
 completion6 = Completion.create
-completion6.wod = diane
+completion6.wod_id = cindy.id
 completion6.milliseconds = 315951
 completion6.save
 
@@ -159,3 +159,11 @@ name3.each do |word|
 end
 puts nicksname.rstrip + " eats monkey poop!"
 puts nicolesname.rstrip + " is amazing at eating monkey poop!"
+
+jname = ""
+name2 = justin.name.split(" ")
+name2.each do |word|
+  jname << word.capitalize + " "
+end
+puts jname.rstrip + " is a poop connoisseur"
+
