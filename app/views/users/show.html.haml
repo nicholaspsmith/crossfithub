@@ -4,6 +4,14 @@
     %h3= @user.name
     %hr
 
+  .large-5.columns
+    Completed workouts
+    %p
+    - @user.completions.each do |completion|
+      = completion.wod.name
+      %p= completion.time
+
+
   .large-4.columns
     = @user.name
     is following:
