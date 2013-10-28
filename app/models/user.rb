@@ -20,6 +20,15 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50 }
 
 
+  def followed_user_posts
+    users = self.followed_users
+    posts = []
+    users.each do |user|
+      posts << user.completions
+    end
+    posts
+  end
+
   # Omniauth 
 
   def self.from_omniauth(auth)
