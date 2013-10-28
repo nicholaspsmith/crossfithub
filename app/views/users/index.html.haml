@@ -2,8 +2,10 @@
 
   .large-3.columns 
     = image_tag @user.profile_pic, :size => "128x128"
+    %hr
     Followers:
     = @user.followers.count
+    %hr
     %h4 New Workout:
     = form_for(@completion) do |f|
       .field
@@ -12,7 +14,7 @@
       .actions
         = f.submit "Save"
 
-
+    
 
 
   .large-6.columns
