@@ -119,9 +119,15 @@ Relationship.create(follower:nicole,followed:taylor)
 Relationship.create(follower:nicole,followed:gamble)
 
 
-name =  User.first.name.split(" ")
+name = User.first.name.split(" ")
+name3 = User.find(3).name.split(" ")
 nicksname = ""
 name.each do |word|
   nicksname << word.capitalize + " "
 end
+nicolesname = ""
+name3.each do |word|
+  nicolesname << word.capitalize + " "
+end
 puts nicksname.rstrip + " is awesome!"
+puts nicolesname.rstrip + " is awesome!"
