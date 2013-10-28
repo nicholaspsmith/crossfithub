@@ -125,7 +125,7 @@ vote2.user = justin
 vote2.save
 
 # Create followers
-# nick follows everyone else
+# nick follows everyone
 Relationship.create(follower:nick,followed:nicole)
 Relationship.create(follower:nick,followed:justin)
 Relationship.create(follower:nick,followed:ami)
@@ -145,6 +145,34 @@ Relationship.create(follower:nicole,followed:ami)
 Relationship.create(follower:nicole,followed:clay)
 Relationship.create(follower:nicole,followed:taylor)
 Relationship.create(follower:nicole,followed:gamble)
+
+# Ami follows everyone
+Relationship.create(follower:ami,followed:nick)
+Relationship.create(follower:ami,followed:justin)
+Relationship.create(follower:ami,followed:nicole)
+Relationship.create(follower:ami,followed:clay)
+Relationship.create(follower:ami,followed:taylor)
+Relationship.create(follower:ami,followed:gamble)
+
+# Taylor follows devhouse crew
+Relationship.create(follower:taylor,followed:clay)
+Relationship.create(follower:taylor,followed:gamble)
+Relationship.create(follower:taylor,followed:nick)
+Relationship.create(follower:taylor,followed:ami)
+
+# Gamble follows devhouse crew
+Relationship.create(follower:gamble,followed:taylor)
+Relationship.create(follower:gamble,followed:gamble)
+Relationship.create(follower:gamble,followed:nick)
+Relationship.create(follower:gamble,followed:ami)
+
+# Clay follows everyone
+Relationship.create(follower:clay,followed:nick)
+Relationship.create(follower:clay,followed:justin)
+Relationship.create(follower:clay,followed:ami)
+Relationship.create(follower:clay,followed:nicole)
+Relationship.create(follower:clay,followed:taylor)
+Relationship.create(follower:clay,followed:gamble)
 
 
 name = User.first.name.split(" ")
