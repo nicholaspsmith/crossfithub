@@ -26,7 +26,7 @@
           .large-3.small-3.columns
             =image_tag completion.user.profile_pic
           .large-9.small-9.columns
-            = "#{completion.user.name} completed #{Wod.find(completion.wod_id)} in #{completion.time}"
+            = "#{completion.user.name} completed #{Wod.find(completion.wod_id).name} in #{completion.time}"
             .timeline-details= completion.created_at.asctime
             %input{:type => "text"}
             %a{:href => "#"} High five!
