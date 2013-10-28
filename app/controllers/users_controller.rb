@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
     @user = current_user
-    #@name = User.where(email: current_user.email).first.name
+    # redirect_to @user
+    # raise @user.inspect
+    # @name = User.where(email: current_user.email).first.name
   end
 
   def show
