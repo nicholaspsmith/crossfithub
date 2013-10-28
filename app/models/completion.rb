@@ -11,9 +11,9 @@ class Completion < ActiveRecord::Base
     minutes = (self.milliseconds / 60_000) % 60
     hours = (self.milliseconds / 3600000) % 24
     if hours > 0
-      time = "#{hours}:#{minutes}:#{seconds}.#{millis}"
+      time = "#{hours}:#{minutes}:#{seconds}:#{millis}"
     else
-      time = "#{minutes}:#{seconds}.#{millis}"
+      time = "#{minutes}:#{seconds}:#{millis}"
     end
   end
 end
