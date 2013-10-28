@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20131027230757) do
   end
 
   create_table "completions", force: true do |t|
-    t.time     "time"
+    t.integer  "milliseconds"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

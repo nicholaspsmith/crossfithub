@@ -4,7 +4,7 @@ class Vote < ActiveRecord::Base
 
   VOTE_KIND = { :thumbs_up => 1, :thumbs_down => 2 }
 
-  validates :completion, uniqueness: { scope: :user }
+  validates :completion_id, uniqueness: { scope: :user }
 
 
   #

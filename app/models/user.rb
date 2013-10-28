@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50 }
 
 
+  # Omniauth 
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
