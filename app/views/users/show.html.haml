@@ -11,7 +11,6 @@
       = Wod.find(completion.wod_id).name
       %p= completion.time
 
-
   .large-4.columns
     = @user.name
     is following:
@@ -23,6 +22,3 @@
       - @user.followed_users.each do |user|
         =image_tag user.profile_pic, :size => "64x64"
         %p= link_to user.name, user
-
-
-  
