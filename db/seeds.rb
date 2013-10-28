@@ -41,7 +41,7 @@ membership.save
 # Create Completions
 completion = Completion.create
 completion.wod = fran # TODO: Add wod_id.
-completion.milliseconds = 352000
+completion.milliseconds = 152000
 completion.save
 
 completion2 = Completion.create
@@ -51,8 +51,26 @@ completion2.save
 
 completion3 = Completion.create
 completion3.wod = barbara
-completion3.milliseconds = 234394
+completion3.milliseconds = 137539
 completion3.save
+
+
+completion4 = Completion.create
+completion4.wod = chelsea
+completion4.milliseconds = 139502
+completion4.save
+
+
+completion5 = Completion.create
+completion5.wod = cindy
+completion5.milliseconds = 1239585
+completion5.save
+
+
+completion6 = Completion.create
+completion6.wod = diane
+completion6.milliseconds = 315951
+completion6.save
 
 
 # associate completion with user
@@ -64,6 +82,16 @@ nick.save
 
 justin.completions << completion3
 justin.save
+
+nicole.completions << completion4
+nicole.save
+
+clay.completions << completion5
+clay.save
+
+gamble.completions << completion6
+gamble.save
+
 
 
 
@@ -130,4 +158,4 @@ name3.each do |word|
   nicolesname << word.capitalize + " "
 end
 puts nicksname.rstrip + " is awesome!"
-puts nicolesname.rstrip + " is awesome!"
+puts nicolesname.rstrip + " is poop!"

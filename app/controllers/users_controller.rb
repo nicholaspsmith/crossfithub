@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @completion = Completion.new
+    ## change this later
+    #@current_wod = Wod.find(3)
   end
 
   def show
