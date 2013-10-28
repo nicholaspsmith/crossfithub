@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @completion = Completion.new
     ## will need to set today's wod in here somewhere
     #@current_wod = Wod.find(3)
+    # @workouts = Wod.all.by_name
   end
 
   def show
