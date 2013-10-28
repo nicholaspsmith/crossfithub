@@ -4,6 +4,10 @@
 
 - Keep track of your WOD times
 
-- Earn badges for completing WODs, beating PRs, completing benchmark workouts, and beating friends' times
+- Follow your friends
+
+- Earn badges for achieving new records
 
 - Share your progress on Facebook
+
+- Stay motivated
