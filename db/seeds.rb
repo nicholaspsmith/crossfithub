@@ -157,5 +157,5 @@ nicolesname = ""
 name3.each do |word|
   nicolesname << word.capitalize + " "
 end
-puts nicksname.rstrip + " is awesome!"
-puts nicolesname.rstrip + " is poop!"
+puts nicksname.rstrip + " eats monkey poop!"
+puts nicolesname.rstrip + " is amazing!"
