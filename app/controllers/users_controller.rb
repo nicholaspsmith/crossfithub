@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    binding.pry
     @name = User.where(email: current_user.email).first.name
   end
 

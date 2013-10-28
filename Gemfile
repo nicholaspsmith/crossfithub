@@ -50,3 +50,4 @@ gem 'devise'
 
 gem 'haml-rails'
 gem 'hirb'
+gem 'pry'
