@@ -28,6 +28,16 @@ class User < ActiveRecord::Base
     end
     posts
   end
+  
+  def feed
+    Completion.where("user_id = ?", id)
+  end
+
+  def self.search(search)
+    if search
+      @user = User.find(:all, :conditions => ['name', "%#{search}%"])  
+    end
+  end
 
   # Omniauth 
 
