@@ -36,6 +36,7 @@ gem 'compass-rails', '~> 2.0.alpha.0'
 gem 'zurb-foundation'
 gem 'devise'
 gem 'figaro'
+gem 'pry'
 
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'

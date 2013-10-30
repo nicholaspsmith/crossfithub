@@ -41,7 +41,7 @@
             %a{href: "#"} Settings
           %li.divider
           %li
-            = link_to "Sign out", destroy_user_session_path
+            = link_to "Sign out", destroy_user_session_path, :method => :delete
 
     #user-widget
       - if current_user

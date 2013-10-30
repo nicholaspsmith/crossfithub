@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to root_url
+    user_session_path(current_user.id), :method => :delete
+    redirect_to root_url, notice: "Signed out!"
   end
 
   def failure
