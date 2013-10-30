@@ -175,23 +175,3 @@ Relationship.create(follower:clay,followed:taylor)
 Relationship.create(follower:clay,followed:gamble)
 
 
-name = User.first.name.split(" ")
-name3 = User.find(3).name.split(" ")
-nicksname = ""
-name.each do |word|
-  nicksname << word.capitalize + " "
-end
-nicolesname = ""
-name3.each do |word|
-  nicolesname << word.capitalize + " "
-end
-puts nicksname.rstrip + " eats monkey poop!"
-puts nicolesname.rstrip + " is amazing at eating monkey poop!"
-
-jname = ""
-name2 = justin.name.split(" ")
-name2.each do |word|
-  jname << word.capitalize + " "
-end
-puts jname.rstrip + " is a poop connoisseur"
-
