@@ -7,10 +7,12 @@
     = @user.followers.count
     %hr
     %h4 New Workout:
-    = form_for(@completion) do |f|
+    = form_for @completion do |f|
       .field
         = f.label :milliseconds
         = f.number_field :milliseconds
+      .field
+        = f.collection_select :wod_id, Wod.all.collect, :id, :name, include_blank: true
       .actions
         = f.submit "Save"
 
@@ -43,8 +45,6 @@
                     =image_tag comment.user.profile_pic
                   .large-10.small-10.columns
                     .timeline-comment= comment.text
-
-
 
   .large-3.columns
     %p Following:
