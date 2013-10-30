@@ -20,6 +20,14 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50 }
 
 
+  def fname
+    self.name.split(" ")[0]
+  end
+
+  def lname
+    self.name.split(" ")[1]
+  end
+
   def followed_user_posts
     users = self.followed_users
     posts = []
