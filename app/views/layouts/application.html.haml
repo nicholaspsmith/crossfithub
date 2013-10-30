@@ -36,7 +36,7 @@
             %a{href: "#"} Settings
           %li.divider
           %li
-            = link_to "Sign out", signout_path, id: "sign_out"
+            = link_to "Sign out", destroy_user_session_path
 
     #user-widget
       - if current_user
@@ -50,6 +50,6 @@
       
     %p.alert= alert unless alert.blank?
       
-
+    = javascript_include_tag :all 
     = yield
     = javascript_include_tag "application"
