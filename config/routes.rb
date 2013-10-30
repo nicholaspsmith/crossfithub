@@ -16,5 +16,6 @@ Crossfithub::Application.routes.draw do
 
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   
+  get 'users/', to: 'users#follow', as: 'follow'
 
 end

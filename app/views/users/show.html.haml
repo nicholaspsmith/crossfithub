@@ -3,6 +3,12 @@
     = image_tag @user.profile_pic
     %h3= @user.name
     %hr
+    - if current_user.followed_users.include?(@user)
+      You are following
+      = @user.name
+    - else
+      = link_to "Follow", follow_path
+      = @user.name
 
   .large-5.columns
     Completed workouts
