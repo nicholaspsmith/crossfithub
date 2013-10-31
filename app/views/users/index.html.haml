@@ -3,8 +3,10 @@
   .large-3.columns
     = image_tag @user.profile_pic, :size => "128x128"
     %hr
-    Followers:
-    = @user.followers.count
+    - if signed_in?
+      %section
+        =render 'users/stats'
+
     %hr
     %h4 New Workout:
     = form_for @completion do |f|
