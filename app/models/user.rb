@@ -33,9 +33,11 @@ class User < ActiveRecord::Base
     Completion.where("user_id = ?", id)
   end
 
-  def self.search(search)
-    if search
-      @user = User.find(:all, :conditions => ['name', "%#{search}%"])  
+  def self.search(query)
+    if query.present?
+      @user = User.where("name @@ :q or fname @@ :q or lname @@ :q", q: query).first
+    else
+      scoped
     end
   end
 

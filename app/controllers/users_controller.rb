@@ -3,7 +3,10 @@ class UsersController < ApplicationController
   def index
     @completion = Completion.new
     ## will need to set today's wod in here somewhere
-    @user = User.search(params[:search])
+    if params[:search]
+      @user = User.search(params[:search])
+    end
+    
     render "show" if @user != nil
     @user = User.find(current_user.id)
   end
