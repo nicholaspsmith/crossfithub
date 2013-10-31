@@ -1,5 +1,10 @@
 Crossfithub::Application.routes.draw do
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}#, controllers: {omniauth_callbacks: 'omniauth_callbacks'}
+
+  devise_for :users, path_names: {sign_in: "login", sign_out: "signout"}
+
+  # devise_scope :user do
+  #   delete "/signout" => "devise/sessions#destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -16,7 +21,9 @@ Crossfithub::Application.routes.draw do
 
   post 'user/:id' => 'completions#create'
 
-  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+  # get 'user/signout' => 'sessions#destroy', as: 'signout', :via => :delete 
+  
+  match 'signout', to: 'sessions#destroy', as: 'signout', :via => :delete
   
   get 'users/', to: 'users#follow', as: 'follow'
 
