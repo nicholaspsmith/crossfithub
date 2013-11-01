@@ -6,6 +6,21 @@ class Completion < ActiveRecord::Base
   has_many :comments
   has_one :wod
   belongs_to :user
+  belongs_to :wod
+
+  def name
+    self.wod.name
+  end
+
+  def upvotes
+    # count how many upvotes this completion has
+    # self.votes.where(kind: 1, completion_id: self.id).count
+  end
+
+  def downvotes
+    # count how many downvotes this completion has
+    self.votes.where(kind: 2, completion_id: self.id).count
+  end
 
   def time
     time = ""
