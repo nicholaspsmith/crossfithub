@@ -33,7 +33,7 @@
             = "#{completion.user.name} completed #{Wod.find(completion.wod_id).name} in #{completion.time}"
             .timeline-details= completion.created_at.asctime
             %input{:type => "text"}
-            %a{:href => "#"} High five!
+            %a{:href => "completion.vote"} High five!
             - completion
             %span= "#{User.vote_count(completion.votes, 'High-Five')} people high fived you!"
             %br/

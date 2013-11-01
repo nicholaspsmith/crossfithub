@@ -4,6 +4,10 @@ class ActsAsVotableMigration < ActiveRecord::Migration
 
       t.references :votable, :polymorphic => true
       t.references :voter, :polymorphic => true
+      t.references :completion
+      t.references :user
+
+      t.integer :kind
 
       t.boolean :vote_flag
       t.string :vote_scope
