@@ -1,4 +1,7 @@
 class Completion < ActiveRecord::Base
+
+  acts_as_votable
+
   has_many :votes
   has_many :comments
   has_one :wod
