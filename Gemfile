@@ -37,6 +37,7 @@ gem 'zurb-foundation'
 gem 'devise'
 gem 'figaro'
 gem 'pry'
+gem 'acts_as_votable', '~> 0.7.1'
 
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
