@@ -60,6 +60,8 @@ gem 'hirb'
 gem 'better_errors'
 gem 'binding_of_caller'
 
+gem 'will_paginate', '~> 3.0'
+
 group :development do
   gem 'rspec-rails', '2.13.1'
 end

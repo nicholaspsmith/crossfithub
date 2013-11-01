@@ -43,6 +43,7 @@ class User < ActiveRecord::Base
     end
   end
 
+
   def following?(other_user)
     relationships.find_by(followed_id: other_user.id)
     #binding.pry
