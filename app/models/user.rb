@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   has_many  :memberships
   has_many  :gyms, through: :memberships
   has_many  :completions
-  has_many  :votes
-  has_many  :comments
+  has_many  :votes, through: :completions
+  has_many  :comments, through: :completions
 
   # followers
   has_many  :relationships, foreign_key: "follower_id", 
