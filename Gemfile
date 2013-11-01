@@ -61,6 +61,8 @@ gem 'hirb'
 gem 'better_errors'
 gem 'binding_of_caller'
 
+gem 'will_paginate', '~> 3.0'
+
 group :development do
   gem 'rspec-rails', '2.13.1'
 end
@@ -68,4 +70,5 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails', '4.2.1'
 end

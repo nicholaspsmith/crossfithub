@@ -1,3 +1,4 @@
+# User Spec
 require 'spec_helper'
 # __FILE__ lists the entire filepath of current file
 describe User do

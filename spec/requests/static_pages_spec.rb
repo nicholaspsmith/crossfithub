@@ -1,31 +1,39 @@
+# Static Pages Spec
 require 'spec_helper'
 
 describe "Static pages" do
 
-  subject { page }
+  pending "fill out test for static page rendering"
 
-  describe "Home page" do
+  # describe "Home page" do
 
-    describe "for signed-in users" do 
-      let(:user) { User.create }
-      before do
-        c = Completion.create
-        w = Wod.create
-        c.wod_id = w.id
-        c.milliseconds = 234394
-        c.save
-        user.completions << c
-        user.save
-        login_as user, scope: :user
-        visit root_path
-      end
+  #   describe "for signed-in users" do
 
-      it "should render the user's feed" do
-        user.feed.each do |item|
-          expect(page).to have_selector("#{item.id}", text: item.content)
-        end
-      end
-    end
-  end
+  #     let(:user) { FactoryGirl.create(:user) }
+  #     before do
+  #       FactoryGirl.create(:completion, user: user, milliseconds: 123_123)
+  #       FactoryGirl.create(:completion, user: user, milliseconds: 321_321)
+  #       sign_in user
+  #       visit root_path
+  #     end
+
+  #     it "should render the user's feed" do
+  #       user.feed.each do |item|
+  #         expect(page).to have_selector("li##{item.id}", text: item.content)
+  #       end
+  #     end
+
+  #     describe "follower/following counts" do
+  #       let(:other_user) { FactoryGirl.create(:user, email: "other@user.com") }
+  #       before do
+  #         other_user.follow!(user)
+  #         visit root_path
+  #       end
+
+  #       it { should have_link("0 following", href: following_user_path(user)) }
+  #       it { should have_link("1 followers", href: followers_user_path(user)) }
+  #     end
+  #   end
+  # end
 
 end
