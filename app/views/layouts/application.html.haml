@@ -18,7 +18,7 @@
     = javascript_include_tag "vendor/custom.modernizr"
     = csrf_meta_tags
 
-  %body
+  %body{ :class => ('logged-out' unless current_user) }
     %nav.top-bar
       %ul.title-area
         %li.name
