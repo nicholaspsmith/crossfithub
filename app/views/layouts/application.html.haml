@@ -19,29 +19,31 @@
     = csrf_meta_tags
 
   %body{ :class => ('logged-out' unless current_user) }
-    %nav.top-bar
-      %ul.title-area
-        %li.name
-          %h1
-            = link_to "CrossFitHub", root_path
-        %li.toggle-topbar.menu-icon
-          %a{href: "#"}
-            %span Menu
-      %section.top-bar-section
-        %ul.left
-          %li
-            = form_tag users_path, method: 'get' do
-              %p
-                = text_field_tag :search, params[:search]
-        %ul.right
-          %li
-            %a{href: "#"} WOD
-          %li.divider
-          %li
-            %a{href: "#"} Settings
-          %li.divider
-          %li
-            = link_to "Sign out", destroy_user_session_path, :method => :delete
+
+    = if current_user
+      %nav.top-bar
+        %ul.title-area
+          %li.name
+            %h1
+              = link_to "CrossFitHub", root_path
+          %li.toggle-topbar.menu-icon
+            %a{href: "#"}
+              %span Menu
+        %section.top-bar-section
+          %ul.left
+            %li
+              = form_tag users_path, method: 'get' do
+                %p
+                  = text_field_tag :search, params[:search]
+          %ul.right
+            %li
+              %a{href: "#"} WOD
+            %li.divider
+            %li
+              %a{href: "#"} Settings
+            %li.divider
+            %li
+              = link_to "Sign out", destroy_user_session_path, :method => :delete
 
     / #user-widget
     /   - if current_user
