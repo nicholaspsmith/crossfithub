@@ -1,0 +1,105 @@
+
+
+<div class="row">
+  <div class="large-8 columns large-centered">
+    <a href="/">&lt; Back</a>
+    <h3><%= @contest.title %></h3>
+
+    <div class="showcase row">
+      <div class="left-side large-6 columns">
+        <%= image_tag @contest.left %>
+      </div>
+      <div class="right-side large-6 columns">
+        <%= image_tag @contest.right %>
+      </div>
+    </div>
+
+    <div class="comment-wall"></div>
+
+    <div class="panel">
+      <h3>Cast Your Vote!</h3>
+      <form class="new-comment">
+        <label>Username</label>
+        <input name="username" type="text" />
+
+        <label>Vote</label>
+        <select name="side">
+          <option value="left">Left Side</option>
+          <option value="right">Right Side</option>
+        </select>
+
+        <label>Comment</label>
+        <textarea name="comment"></textarea>
+
+        <input type="submit" value="Vote and Comment!" />
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="templates">
+  <script class="comment" type="text/template">
+    <div class="small-3 large-2 columns"><img src="http://placehold.it/50x50&text=[img]" /></div>
+    <div class="small-9 large-10 columns">
+      <b>{{ username }}</b> (chose <b>{{ side }}</b>):
+      <p>{{ comment }}</p>
+      <a class="delete" href="#">Delete Comment</a>
+    </div>
+  </script>
+
+  <script class="vote-count" type="text/template">
+    <h4>{{ count }} Vote(s)</h4>
+  </script>
+</div>
+
+
+<% content_for :javascript do %>
+<script type="text/javascript">
+
+  /* *
+   * Lesson Step: The Comment Wall View
+   */
+  var wall = new CommentWall([], {
+    url: '<%= contest_comment_api_path @contest %>'
+  });
+
+  var wallView = new CommentWallView({
+    collection: wall,
+    el: '.comment-wall'
+  });
+
+  wall.add(<%= raw @contest.comments.to_json %>);
+
+
+  /* *
+   * Lesson Step: The New Comment Form
+   */
+  // The view that handles adding new comments
+  var commentForm = new CommentInputView({
+    collection: wall,
+    el: 'form.new-comment'
+  });
+
+
+  /* *
+   * Lesson Step: The Vote Count View
+   */
+  // Each of these views displays the numebr of votes for each side
+  var leftVoteCount = new VoteCountView({
+    side: 'left',
+    collection: wall
+  });
+  var rightVoteCount = new VoteCountView({
+    side: 'right',
+    collection: wall
+  });
+
+  leftVoteCount.render();
+  rightVoteCount.render();
+  $('.showcase .left-side').append(leftVoteCount.el);
+  $('.showcase .right-side').append(rightVoteCount.el);
+
+</script>
+<% end %>
