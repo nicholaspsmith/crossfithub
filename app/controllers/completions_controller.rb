@@ -30,4 +30,10 @@ class CompletionsController < ApplicationController
 
     render :nothing => true, :status => 200
   end
+
+  private
+
+  def comment_params
+    params.permit(:kind, :name, :text)
+  end
 end
