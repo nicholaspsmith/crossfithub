@@ -53,9 +53,11 @@
     /   - else
     /     = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
 
-    %p.notice= notice unless notice.blank?
-
-    %p.alert= alert unless alert.blank?
+    .row
+      - unless notice.blank?
+        %p.alert-box.notice= notice
+      - unless alert.blank?
+        %p.alert-box.alert= alert
 
     = javascript_include_tag :all
     .row= yield
