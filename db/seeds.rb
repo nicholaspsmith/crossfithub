@@ -77,11 +77,18 @@ completion6.save
 nick.completions << completion
 nick.save
 
+
+
 nick.completions << completion2
 nick.save
 
 justin.completions << completion3
 justin.save
+
+# Justin should have 1 like for his completion
+completion3.vote :voter => nick
+
+
 
 nicole.completions << completion4
 nicole.save
@@ -114,13 +121,11 @@ badge.save
 badge2.save
 
 # Create Votes
-vote = Vote.create(:kind => Vote::VOTE_KIND[:thumbs_up])
-vote.completion = completion
-vote.user = nick
-vote.save
+Vote.create(kind: Vote::VOTE_KIND[:thumbs_up], completion_id: completion.id, user_id: nick.id)
+Vote.create(kind: Vote::VOTE_KIND[:thumbs_up], completion_id: completion.id, user_id: justin.id)
 
-vote2 = Vote.create(:kind => Vote::VOTE_KIND[:thumbs_down])
-vote.completion = completion
+vote2 = Vote.create(kind: Vote::VOTE_KIND[:thumbs_down])
+vote2.completion = completion
 vote2.user = justin
 vote2.save
 

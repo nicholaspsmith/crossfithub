@@ -18,6 +18,7 @@ class Vote < ActiveRecord::Base
     self.kind == VOTE_KIND[:thumbs_down]
   end
 
+
   alias :high_five? :thumbs_up?
   alias :shame? :thumbs_down?
   # v = Vote.find 1
