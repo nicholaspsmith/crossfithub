@@ -1,6 +1,6 @@
 <!-- need to print out number of votes per completion -->
 
-high-fives <%= @completion.votes.size %>
+high-fives <%= @completion.likes.size %>
 
 <%= form_for(@completion.votes.build(kind: Vote::VOTE_KIND[:thumbs_up], completion_id: @completion.id, user_id: @user.id), remote: true) do |f| %>
 

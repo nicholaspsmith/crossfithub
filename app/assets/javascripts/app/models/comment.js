@@ -5,11 +5,11 @@
   window.CommentWall = Backbone.Collection.extend({
     model: Comment,
 
-    // filterBySide: function (side) {
-    //   // Gets all comments that voted for the given side.
-    //   return this.filter(function (comment) {
-    //     return comment.get('side') === side;
-    //   });
+    filterByKind: function (kind) {
+      // Gets all comments that voted for the given kind.
+      return this.filter(function (comment) {
+        return comment.get('kind') === kind;
+      });
     }
   });
 

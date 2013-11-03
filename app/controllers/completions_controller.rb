@@ -12,8 +12,8 @@ class CompletionsController < ApplicationController
   end
 
   def comment
-    @contest = Completion.find(params[:id])
-    new_comment = @contest.comments.create(comment_params)
+    @completion = Completion.find(params[:id])
+    new_comment = @completion.comments.create(comment_params)
     new_comment.user_id = current_user.id
     new_comment.save!
 
@@ -23,7 +23,7 @@ class CompletionsController < ApplicationController
   def destroy_comment
     @comment = Completion.where(
       :id => params[:comment_id],
-      :contest_id => params[:contest_id]
+      :completion_id => params[:completion_id]
     ).first
 
     @comment.destroy if @comment.user_id == current_user.id 
