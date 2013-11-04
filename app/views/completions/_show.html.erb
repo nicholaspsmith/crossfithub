@@ -1,16 +1,6 @@
 
-<div class="large-3 small-3 columns"><%= image_tag @completion.user.profile_pic %></div>
-<div class="large-9 small-9 columns">
-  <%= "#{@completion.user.name} completed #{Wod.find(@completion.wod_id).name} in #{@completion.time}" %>
-  <div class="timeline-details">
-    <%= @completion.created_at.asctime %>
-    <form>
-    <input type="text" placeholder="Comment">
-    </form>
-    <%= render 'votes' %>
-    <hr />
-    <div class="timeline-comments">
-      <%= render 'completions/completion' %>
-    </div>
-  </div>
-</div>
+
+
+
+
+

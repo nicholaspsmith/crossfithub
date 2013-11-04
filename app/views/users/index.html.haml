@@ -7,7 +7,7 @@
 
   %hr
   %h4 New Workout:
-  = form_for @completion, html: {class: "custom"} do |f|
+  = form_for @completion, html: {class: "custom"}, remote: true do |f|
     .field
       = f.label :milliseconds
       = f.number_field :milliseconds
@@ -19,12 +19,8 @@
 
   / move this into a partial
   /(supposed to be no logic in view)
-.large-7.columns
-  - @user.followed_user_posts.each do |followed_user_post|
-    - followed_user_post.each do |completion|
-      .timeline-block.panel
-        - @completion = completion
-        = render 'completions/show'
+.large-7.columns#completions
+  = render 'completions/completions'
 
 .large-2.columns
   %p Following:

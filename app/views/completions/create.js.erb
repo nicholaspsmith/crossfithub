@@ -1,2 +1,3 @@
-$('.upvotes-count.<%=@completion.id%>').html(<%= @completion.likes.count %>);
-$('.downvotes-count.<%=@completion.id%>').html(<%= @completion.dislikes.count %>);
+$('#completions').html("<%= escape_javascript(render('completions/completions')) %>");
+$('#completion_milliseconds').val('');
+alert("Workout added!");
