@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many  :completions
   has_many  :votes, through: :completions
   has_many  :comments, through: :completions
+  has_many  :activities
 
   # followers
   has_many  :relationships, foreign_key: "follower_id", 

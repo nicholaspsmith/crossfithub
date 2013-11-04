@@ -8,6 +8,7 @@ class Completion < ActiveRecord::Base
   belongs_to :user
   belongs_to :wod
 
+
   def name
     self.wod.name
   end
