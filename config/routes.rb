@@ -1,5 +1,7 @@
 Crossfithub::Application.routes.draw do
 
+  resources :activities
+
   devise_for :users, path_names: {sign_in: "login", sign_out: "signout"}
 
   root 'users#index'
@@ -10,6 +12,7 @@ Crossfithub::Application.routes.draw do
     end
   end
 
+  resources :wods
 
 
   resources :completions do

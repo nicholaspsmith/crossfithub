@@ -26,5 +26,5 @@
       = 'nobody :('
     -else
       - @user.followed_users.each do |user|
-        =image_tag user.profile_pic, :size => "64x64"
+        =link_to image_tag(user.profile_pic, :size => "64x64"), user
         %p= link_to user.name, user
