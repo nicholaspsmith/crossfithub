@@ -1,13 +1,7 @@
 <!-- need to print out number of votes per completion -->
 
-high-fives <%= @completion.likes.size %>
-
-<%= form_for(@completion.votes.build(kind: Vote::VOTE_KIND[:thumbs_up], completion_id: @completion.id, user_id: @user.id), remote: true) do |f| %>
-
-  <%# f.hidden_field %>
-
-  <% f.submit "High Five", class: "btn btn-large btn-primary upvote" %>
-<% end %>
-<!-- Vote.create(kind: Vote::VOTE_KIND[:thumbs_up], completion_id: completion.id, user_id: user.id) -->
+high-fives <%= @completion.likes.count %>
 
 
+
+<%= link_to "Upvote", {:controller =>"completions", :action => "upvote", :id => @completion.id}, :class => 'btn', method: :put %>

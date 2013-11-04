@@ -1,8 +1,4 @@
-shames <%= @completion.downvotes %>
+shames <%= @completion.dislikes.count %>
 
-<%= form_for(@completion.votes.build(kind: Vote::VOTE_KIND[:thumbs_down], completion_id: @completion.id, user_id: @user.id), remote: true) do |f| %>
 
-  <%# f.hidden_field %>
-
-  <% f.submit "Shame", class: "btn btn-large btn-primary downvote" %>
-<% end %>
+<button class="downvote-button">Shame</button>

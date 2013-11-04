@@ -30,4 +30,8 @@ class CompletionsController < ApplicationController
 
     render :nothing => true, :status => 200
   end
+
+  def upvote id
+    
+  end
 end
