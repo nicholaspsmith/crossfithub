@@ -7,15 +7,14 @@
 
   %hr
   %h4 New Workout:
-  = form_for @completion do |f|
+  = form_for @completion, html: {class: "custom"} do |f|
     .field
       = f.label :milliseconds
       = f.number_field :milliseconds
     .field
-      = f.collection_select :wod_id, Wod.all.collect, :id, :name, include_blank: true
+      = f.collection_select :wod_id, Wod.all.collect, :id, :name, include_blank: false
     .actions
       = f.submit "Save", {class: 'button small expand'}
-
 
   / - @user.followed_user_posts.each do |fuposts|
   /   - fuposts.each do |post|
