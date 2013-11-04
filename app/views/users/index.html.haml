@@ -12,6 +12,7 @@
       = f.label :milliseconds
       = f.number_field :milliseconds
     .field
+      = f.label :wod_id
       = f.collection_select :wod_id, Wod.all.collect, :id, :name, include_blank: false
     .actions
       = f.submit "Save", {class: 'button small expand'}
