@@ -34,6 +34,7 @@ end
 
 gem 'compass-rails', '~> 2.0.alpha.0'
 gem 'zurb-foundation'
+gem 'foundation-icons-sass-rails'
 gem 'devise'
 gem 'figaro'
 gem 'pry'
