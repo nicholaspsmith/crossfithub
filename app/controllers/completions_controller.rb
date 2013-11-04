@@ -1,17 +1,23 @@
 class CompletionsController < ApplicationController
   def create
+    # Ew code Smell!!!!
     milliseconds = params[:completion]
     wod = params[:completion]
     new_completion = Completion.new
     new_completion.wod_id = wod[:wod_id]
     new_completion.milliseconds = milliseconds[:milliseconds]
     new_completion.user_id = current_user.id
-    # need something like this \/ (but better, cause it will actually work)
-    new_completion.save!
 
-    respond_to do |format|
-      format.html { redirect_to users_path, notice: "Workout added!" }
-      format.js
+    if new_completion.save!
+      track_activity new_completion
+
+      respond_to do |format|
+        format.html { redirect_to users_path, notice: "Workout added!" }
+        format.js
+      end
+
+    else
+      redirect_to users_path, notice: "Workout not added"
     end
   end
 
@@ -58,4 +64,6 @@ class CompletionsController < ApplicationController
       format.js
     end
   end
+
+
 end
