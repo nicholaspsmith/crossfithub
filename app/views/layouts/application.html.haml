@@ -18,43 +18,47 @@
     = javascript_include_tag "vendor/custom.modernizr"
     = csrf_meta_tags
 
-  %body
-    %nav.top-bar
-      %ul.title-area
-        %li.name
-          %h1
-            = link_to "CrossFitHub", root_path
-        %li.toggle-topbar.menu-icon
-          %a{href: "#"}
-            %span Menu
-      %section.top-bar-section
-        %ul.left
-          %li
-            = form_tag users_path, method: 'get' do
-              %p
-                = text_field_tag :search, params[:search]
-        %ul.right
-          %li
-            %a{href: "#"} WOD
-          %li.divider
-          %li
-            %a{href: "#"} Settings
-          %li.divider
-          %li
-            = link_to "Sign out", destroy_user_session_path, :method => :delete
+  %body{ :class => ('logged-out' unless current_user) }
 
-    #user-widget
-      - if current_user
-        Welcome
-        = succeed "!" do
-          %strong= current_user.name
-      - else
-        = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)      
+    - if current_user
+      %nav.top-bar
+        %ul.title-area
+          %li.name
+            %h1
+              = link_to "CrossFitHub", root_path
+          %li.toggle-topbar.menu-icon
+            %a{href: "#"}
+              %span Menu
+        %section.top-bar-section
+          %ul.left
+            %li
+              = form_tag users_path, method: 'get' do
+                %p
+                  = text_field_tag :search, params[:search]
+          %ul.right
+            %li
+              %a{href: "#"} WOD
+            %li.divider
+            %li
+              %a{href: "#"} Settings
+            %li.divider
+            %li
+              = link_to "Sign out", destroy_user_session_path, :method => :delete
 
-    %p.notice= notice unless notice.blank?
-      
-    %p.alert= alert unless alert.blank?
-      
-    = javascript_include_tag :all 
-    = yield
+    / #user-widget
+    /   - if current_user
+    /     Welcome
+    /     = succeed "!" do
+    /       %strong= current_user.name
+    /   - else
+    /     = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+
+    .row.alert-row
+      - unless notice.blank?
+        %p.alert-box.notice= notice
+      - unless alert.blank?
+        %p.alert-box.alert= alert
+
+    = javascript_include_tag :all
+    .row= yield
     = javascript_include_tag "application"

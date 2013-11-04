@@ -11,3 +11,9 @@
 - Share your progress on Facebook
 
 - Stay motivated
+
+*Nick : Project Manager Extraordinaire - set up Follow/Unfollow, Database management*
+
+*Justin: Style Guru - set up submission of Workout Completions*
+
+*Nicole : Dynamic Planning Goddess - integrated dynamic comments with Backbone.js*

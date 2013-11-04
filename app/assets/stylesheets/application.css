@@ -12,3 +12,7 @@
  *= require foundation_and_overrides
  *= require_tree .
  */
+
+.alert-row {
+  padding-top: 20px;
+}
