@@ -1,40 +1,34 @@
-%row
+.large-3.columns
+  = image_tag @user.profile_pic
+  %hr
+  - if signed_in?
+    %section
+      = render 'users/stats'
 
-  .large-3.columns
-    = image_tag @user.profile_pic, :size => "128x128"
-    %hr
-    - if signed_in?
-      %section
-        = render 'users/stats'
+  %hr
+  %h4 New Workout:
+  = form_for @completion, html: {class: "custom"} do |f|
+    .field
+      = f.label :milliseconds
+      = f.number_field :milliseconds
+    .field
+      = f.label :wod_id
+      = f.collection_select :wod_id, Wod.all.collect, :id, :name, include_blank: false
+    .actions
+      = f.submit "Save", {class: 'button small expand'}
 
-    %hr
-    %h4 New Workout:
-    = form_for @completion do |f|
-      .field
-        = f.label :milliseconds
-        = f.number_field :milliseconds
-      .field
-        = f.collection_select :wod_id, Wod.all.collect, :id, :name, include_blank: true
-      .actions
-        = f.submit "Save"
-
-
-    / - @user.followed_user_posts.each do |fuposts|
-    /   - fuposts.each do |post|
-    /     %p= post.user.name + " -> " + post.time
-
-  / move this into a partial 
+  / move this into a partial
   /(supposed to be no logic in view)
-  .large-6.columns 
-    - @user.followed_user_posts.each do |followed_user_post|
-      - followed_user_post.each do |completion|
-        .timeline-block
-          / .large-3.small-3.columns
-          - @completion = completion
-          = render 'completions/show'
+.large-7.columns
+  - @user.followed_user_posts.each do |followed_user_post|
+    - followed_user_post.each do |completion|
+      .timeline-block.panel
+        - @completion = completion
+        = render 'completions/show'
 
-  .large-3.columns
-    %p Following:
-    - @user.followed_users.each do |followed_user|
-      = image_tag followed_user.profile_pic, :size => "64x64"
-      %p= link_to followed_user.name, followed_user
+.large-2.columns
+  %p Following:
+  - @user.followed_users.each do |followed_user|
+    = link_to(followed_user) do
+      = image_tag followed_user.profile_pic
+      %p= followed_user.name
