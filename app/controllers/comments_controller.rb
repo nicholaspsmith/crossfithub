@@ -6,8 +6,12 @@ class CommentsController < ApplicationController
     new_comment.text = params[:comment][:text]
     new_comment.user_id = current_user.id
     new_comment.completion_id = params[:completion_id]
-    new_comment.save!
 
+    if new_comment.save
+      respond_to do |format|
+        format.js { render layout: false }
+      end
+    end
     # render :json => new_comment.to_json, :status => 200
   end
 

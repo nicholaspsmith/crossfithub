@@ -6,10 +6,10 @@
   <div class="timeline-details">
     <%= @completion.created_at.asctime %>
     
-<%= form_for [@completion, Comment.new], remote: true do |f| %>
-<%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %> 
-  <%= f.text_field :text %>
-<% end %>
+    <%= form_for([@completion, Comment.new], remote: true) do |f| %>
+    <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %> 
+      <%= f.text_field :text %>
+    <% end %>
 
     <%= render 'votes' %>
     <hr />
