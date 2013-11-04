@@ -2,14 +2,15 @@ class CommentsController < ApplicationController
 
   def create
     # @completion = Completion.find(params[:completion_id])
-    new_comment = Comment.new
-    new_comment.text = params[:comment][:text]
-    new_comment.user_id = current_user.id
-    new_comment.completion_id = params[:completion_id]
+    @comment = Comment.new
+    @comment.text = params[:comment][:text]
+    @comment.user_id = current_user.id
+    @comment.completion_id = params[:completion_id]
 
-    if new_comment.save
+    if @comment.save
       respond_to do |format|
         format.js { render layout: false }
+        format.html { redirect_to root_path }
       end
     end
     # render :json => new_comment.to_json, :status => 200
