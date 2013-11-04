@@ -8,7 +8,11 @@ class CompletionsController < ApplicationController
     new_completion.user_id = current_user.id
     # need something like this \/ (but better, cause it will actually work)
     new_completion.save!
-    redirect_to users_path, notice: "Workout added!"
+
+    respond_to do |format|
+      format.html { redirect_to users_path, notice: "Workout added!" }
+      format.js
+    end
   end
 
   def comment
