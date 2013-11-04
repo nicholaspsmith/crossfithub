@@ -37,12 +37,8 @@ class CompletionsController < ApplicationController
 
     @completion.liked_by current_user
 
-    if current_user.voted_for? @completion
-      @completion.unliked_by current_user
-    end
-    
     respond_to do |format|
-      format.html { redirect_to @user }
+      format.html { redirect_to root_path }
       format.js
     end
   end
@@ -53,12 +49,8 @@ class CompletionsController < ApplicationController
 
     @completion.disliked_by current_user
 
-    if current_user.voted_for? @completion
-      @completion.undisliked_by current_user
-    end
-
     respond_to do |format|
-      format.html { redirect_to @user }
+      format.html { redirect_to root_path }
       format.js
     end
   end

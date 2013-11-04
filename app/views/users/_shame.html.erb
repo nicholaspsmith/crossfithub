@@ -1,4 +1,6 @@
-shames <%= @completion.dislikes.count %>
+<span class="shame-span">
+Shames <span class="downvotes-count"><%= @completion.dislikes.count %></span>
 
 
 <%= link_to "Downvote", {:controller =>"completions", :action => "downvote", :id => @completion.id}, :class => 'btn', method: :put %>
+</span>
