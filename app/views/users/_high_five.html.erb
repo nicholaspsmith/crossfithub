@@ -1,9 +1,9 @@
 <!-- need to print out number of votes per completion -->
 <span class="high-five-span">
-High-Fives <span class="upvotes-count"><%= @completion.likes.count %></span>
+High-Fives <span class="upvotes-count <%= @completion.id %>"><%= @completion.likes.count %></span>
 
 
 
-<%= link_to "Upvote", {:controller =>"completions", :action => "upvote", :id => @completion.id}, :class => 'btn', method: :put %>
+<%= link_to "Upvote", {:controller =>"completions", :action => "upvote", :id => @completion.id}, :class => 'btn', method: :put, remote: true %>
 
 </span>
