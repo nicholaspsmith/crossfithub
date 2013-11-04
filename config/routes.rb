@@ -10,11 +10,13 @@ Crossfithub::Application.routes.draw do
     end
   end
 
-  # may need to be nested
-  resources :votes
+
 
   resources :completions do
-    
+    collection do
+      put :upvote
+      put :downvote
+    end
   end
 
   post 'user/:id' => 'completions#create'

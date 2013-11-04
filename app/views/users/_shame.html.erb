@@ -1,4 +1,4 @@
 shames <%= @completion.dislikes.count %>
 
 
-<button class="downvote-button">Shame</button>
+<%= link_to "Downvote", {:controller =>"completions", :action => "downvote", :id => @completion.id}, :class => 'btn', method: :put %>

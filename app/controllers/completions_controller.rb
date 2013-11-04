@@ -31,7 +31,35 @@ class CompletionsController < ApplicationController
     render :nothing => true, :status => 200
   end
 
-  def upvote id
+  def upvote
+    @completion = Completion.find(params[:id])
+    @user = @completion.user
+
+    @completion.liked_by current_user
+
+    if current_user.voted_for? @completion
+      @completion.unliked_by current_user
+    end
     
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end
+  end
+
+  def downvote
+    @completion = Completion.find(params[:id])
+    @user = @completion.user
+
+    @completion.disliked_by current_user
+
+    if current_user.voted_for? @completion
+      @completion.undisliked_by current_user
+    end
+
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end
   end
 end
