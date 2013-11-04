@@ -1,0 +1,20 @@
+.large-3.small-3.columns= image_tag @completion.user.profile_pic
+.large-9.small-9.columns
+  = "#{@completion.user.name} completed #{Wod.find(@completion.wod_id).name} in #{@completion.time}"
+  .timeline-details
+    = @completion.created_at.asctime
+    = form_for([@completion, Comment.new], remote: true) do |f|
+      = tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token)
+      = f.text_field :text
+    = render 'votes'
+    %hr/
+    .timeline-comments
+      - @completion.comments.each do |comment|
+        .timeline-comment
+          .large-2.small-2.columns
+            = image_tag comment.user.profile_pic
+          .large-10.small-10.columns
+            .timeline-comment
+              = comment.text
+
+

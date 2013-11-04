@@ -1,0 +1,14 @@
+@import url("http://fonts.googleapis.com/css?family=Arvo");
+
+.top-bar {
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+  box-shadow: 0 1px 5px rgba(0,0,0,.75);
+  h1 {
+    font-family: "Arvo";
+  }
+  input {
+    box-shadow: 1px 1px 3px rgba(0,0,0,.5) inset;
+    border: 1px solid hsl(39, 75%, 45%);
+    border-radius: 1em;
+  }
+}

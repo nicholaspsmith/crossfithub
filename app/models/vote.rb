@@ -1,28 +1,31 @@
-class Vote < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :completion
+# This model is no longer needed because of
+# acts_as_votable gem
 
-  VOTE_KIND = { :thumbs_up => 1, :thumbs_down => 2 }
+# class Vote < ActiveRecord::Base
+#   belongs_to :user
+#   belongs_to :completion
 
-  validates :completion_id, uniqueness: { scope: :user }
+#   VOTE_KIND = { :thumbs_up => 1, :thumbs_down => 2 }
 
-
-  #
-  # Vote.create(:kind => Vote::VOTE_KIND[:thumbs_up])
-
-  def thumbs_up?
-    self.kind == VOTE_KIND[:thumbs_up]
-  end
-
-  def thumbs_down?
-    self.kind == VOTE_KIND[:thumbs_down]
-  end
+#   validates :completion_id, uniqueness: { scope: :user }
 
 
-  alias :high_five? :thumbs_up?
-  alias :shame? :thumbs_down?
-  # v = Vote.find 1
-  # if v.thumbs_up? XXXXXX
-  # else if v.thumbs_down? YYYYY
-  # else if v.like?
-end
+#   #
+#   # Vote.create(:kind => Vote::VOTE_KIND[:thumbs_up])
+
+#   def thumbs_up?
+#     self.kind == VOTE_KIND[:thumbs_up]
+#   end
+
+#   def thumbs_down?
+#     self.kind == VOTE_KIND[:thumbs_down]
+#   end
+
+
+#   alias :high_five? :thumbs_up?
+#   alias :shame? :thumbs_down?
+#   # v = Vote.find 1
+#   # if v.thumbs_up? XXXXXX
+#   # else if v.thumbs_down? YYYYY
+#   # else if v.like?
+# end

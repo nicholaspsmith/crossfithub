@@ -10,4 +10,28 @@ class CompletionsController < ApplicationController
     new_completion.save!
     redirect_to users_path, notice: "Workout added!"
   end
+
+  def upvote
+    @completion = Completion.find(params[:id])
+    @user = @completion.user
+
+    @completion.liked_by current_user
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
+  end
+
+  def downvote
+    @completion = Completion.find(params[:id])
+    @user = @completion.user
+
+    @completion.disliked_by current_user
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
+  end
 end
