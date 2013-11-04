@@ -2,7 +2,7 @@
   <div class="signin">
     <h2>Sign in</h2>
 
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <%= form_for(resource, :html => {class: "custom"}, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div><%= f.label :email %><br />
       <%= f.email_field :email, :autofocus => true %></div>
 
@@ -11,6 +11,7 @@
 
       <% if devise_mapping.rememberable? -%>
         <div class="remember-me"><%= f.label :remember_me %>: <%= f.check_box :remember_me %> </div>
+        <br>
       <% end -%>
 
       <div><%= f.submit "Sign in", {class: 'button'} %></div>
