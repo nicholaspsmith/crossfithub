@@ -1,2 +1,2 @@
-$(".high-five-span").html("<%= escape_javascript(render('users/high_five')) %>")
+$('#votes_form').html("<%= escape_javascript(render('users/high_five')) %>")
 $(".upvotes-count").html('<%= @completion.likes.count %>')
