@@ -44,8 +44,15 @@
                 .large-10.small-10.columns
                   .timeline-comment= comment.text
 
+/ .large-2.columns
+/   %p Following:
+/   - @user.followed_users.each do |followed_user|
+/     = image_tag followed_user.profile_pic, :size => "64x64"
+/     %p= link_to followed_user.name, followed_user
+
 .large-2.columns
   %p Following:
   - @user.followed_users.each do |followed_user|
-    = image_tag followed_user.profile_pic, :size => "64x64"
-    %p= link_to followed_user.name, followed_user
+    = link_to(followed_user) do
+      = image_tag followed_user.profile_pic
+      %p= followed_user.name
