@@ -1,0 +1,18 @@
+.large-3.small-3.columns= image_tag @completion.user.profile_pic
+.large-9.small-9.columns
+  = "#{@completion.user.name} completed #{Wod.find(@completion.wod_id).name} in #{@completion.time}"
+  %div
+    %span.timeline-details
+      = @completion.created_at.asctime
+    %form
+      %input{placeholder: "Comment", type: "text"}/
+    = render 'votes'
+    %hr/
+    .timeline-comments
+      - @completion.comments.each do |comment|
+        .timeline-comment
+          .large-2.small-2.columns
+            = image_tag comment.user.profile_pic
+          .large-10.small-10.columns
+            .timeline-comment
+              = comment.text
