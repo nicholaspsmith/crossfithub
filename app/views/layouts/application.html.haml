@@ -59,6 +59,6 @@
       - unless alert.blank?
         %p.alert-box.alert= alert
 
-    = javascript_include_tag :all
+    
     .row= yield
-    = javascript_include_tag "application"
+    = yield :javascript 

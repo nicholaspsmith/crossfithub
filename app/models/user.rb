@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   acts_as_voter
   
   # Include default devise modules. Others available are:
-  devise    :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
+  devise    :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  # , :omniauthable, :omniauth_providers => [:facebook]
 
   has_many  :badges
   has_many  :memberships

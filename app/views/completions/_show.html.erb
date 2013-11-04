@@ -5,9 +5,10 @@
   <%= "#{@completion.user.name} completed #{Wod.find(@completion.wod_id).name} in #{@completion.time}" %>
   <div class="timeline-details">
     <%= @completion.created_at.asctime %>
-    <form>
+    <%= form_for(@completion, url: completion_comment_path(@completion.id), method: 'post', remote: true) do |f| %>
     <input type="text" placeholder="Comment">
-    </form>
+    <input name="authenticity_token" type="hidden" value= "???" >
+    <% end %>
     <%= render 'votes' %>
     <hr />
     <div class="timeline-comments">

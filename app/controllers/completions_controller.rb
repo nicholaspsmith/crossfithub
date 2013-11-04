@@ -34,6 +34,6 @@ class CompletionsController < ApplicationController
   private
 
   def comment_params
-    params.permit(:kind, :name, :text)
+    params.permit(:text)
   end
 end

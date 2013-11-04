@@ -4,6 +4,7 @@
 
   window.CommentWall = Backbone.Collection.extend({
     model: Comment,
+    url: '/completions/:id/comments',
 
     filterByKind: function (kind) {
       // Gets all comments that voted for the given kind.

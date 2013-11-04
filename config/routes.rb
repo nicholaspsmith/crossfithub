@@ -15,10 +15,9 @@ Crossfithub::Application.routes.draw do
 
   resources :completions
 
-  scope :api do
-    post 'completions/:id/comments' => 'completions#comment', :as => :contest_comment_api
-    delete 'completions/:contest_id/comments/:comment_id' => 'completions#destroy_comment'
-  end
+
+  post 'completions/:id/comments' => 'completions#comment', :as => :completion_comment
+  delete 'completions/:completion_id/comments/:comment_id' => 'completions#destroy_comment'
 
   post 'user/:id' => 'completions#create'
 
