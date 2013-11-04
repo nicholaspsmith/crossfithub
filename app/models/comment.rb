@@ -8,8 +8,8 @@ class Comment < ActiveRecord::Base
       user_id: self.user_id,
       completion_id: self.completion_id,
       # kind: self.kind,
-      name: self.name,
-      comment: self.comment
+      # name: self.name,
+      text: self.text
     }
   end
 

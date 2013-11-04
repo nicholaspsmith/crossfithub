@@ -13,11 +13,10 @@ Crossfithub::Application.routes.draw do
   # may need to be nested
   resources :votes
 
-  resources :completions
+  resources :completions do
+    resources :comments
+  end
 
-
-  post 'completions/:id/comments' => 'completions#comment', :as => :completion_comment
-  delete 'completions/:completion_id/comments/:comment_id' => 'completions#destroy_comment'
 
   post 'user/:id' => 'completions#create'
 

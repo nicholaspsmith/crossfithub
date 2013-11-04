@@ -7,6 +7,7 @@ class Completion < ActiveRecord::Base
   has_one :wod
   belongs_to :user
   belongs_to :wod
+  accepts_nested_attributes_for :comments
 
   def name
     self.wod.name
