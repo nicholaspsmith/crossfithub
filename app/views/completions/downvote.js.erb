@@ -1,0 +1,2 @@
+$("#votes_form").html("<%= escape_javascript(render('users/shame')) %>")
+$(".upvotes-count").html('<%= @completion.likes.count %>')

@@ -13,7 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
-//= require_tree .
+//= require underscore
+//= require backbone
+//= require app/util
+//= require app/models/comment
+//= require app/views/comment-view
+//= require app/views/comment-wall-view
+//= require app/views/comment-input-view
+//= require app/views/vote-count-view
 
 $(function(){ $(document).foundation(); });
