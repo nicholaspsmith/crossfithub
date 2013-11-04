@@ -26,7 +26,7 @@
 .large-7.columns
   - @user.followed_user_posts.each do |followed_user_post|
     - followed_user_post.each do |completion|
-      .timeline-block
+      .timeline-block.panel
         .large-3.small-3.columns
           =image_tag completion.user.profile_pic
         .large-9.small-9.columns
