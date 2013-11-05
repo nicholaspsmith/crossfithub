@@ -16,6 +16,7 @@
     %title= content_for?(:title) ? yield(:title) : "CrossFitHub"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/custom.modernizr"
+    = javascript_include_tag "application"
     = csrf_meta_tags
     = javascript_include_tag "https://cdn.firebase.com/v0/firebase.js"
 
@@ -50,8 +51,9 @@
       - unless alert.blank?
         %p.alert-box.alert= alert
 
-    = javascript_include_tag :all
+    
     .row= yield
+
     = javascript_include_tag "application"
     - if current_user != nil
       :javascript
@@ -60,4 +62,7 @@
           firebaseListen(userId)
           console.log("user id: " + userId)
         });
+
+    -# Why is this here?
+    = yield :javascript 
 
