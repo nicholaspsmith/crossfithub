@@ -1,12 +1,21 @@
 class CompletionsController < ApplicationController
   def create
     # Ew code Smell!!!!
-    milliseconds = params[:completion]
+    minutes = params[:completion][:minutes].to_i
+    milliseconds = minutes * 60 * 1000
+
+    seconds = params[:completion][:seconds].to_i
+    milliseconds += seconds * 1000
+    
+    #milliseconds= params[:completion]
     wod = params[:completion]
-    new_completion = Completion.new
-    new_completion.wod_id = wod[:wod_id]
-    new_completion.milliseconds = milliseconds[:milliseconds]
-    new_completion.user_id = current_user.id
+    
+    new_completion = Completion.new do |c|
+      c.wod_id = wod[:wod_id]
+      #new_completion.milliseconds = milliseconds[:milliseconds]
+      c.milliseconds = milliseconds
+      c.user_id = current_user.id
+    end
 
     if new_completion.save!
       track_activity new_completion

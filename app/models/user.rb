@@ -32,9 +32,11 @@ class User < ActiveRecord::Base
     users = self.followed_users
     posts = []
     users.each do |user|
-      posts << user.completions
+      user.completions.each do |c|
+        posts << c
+      end
     end
-    posts
+    posts.sort.reverse
   end
   
   def feed

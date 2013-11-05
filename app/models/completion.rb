@@ -8,6 +8,10 @@ class Completion < ActiveRecord::Base
   belongs_to :user
   belongs_to :wod
 
+  attr_accessor :minutes
+  attr_accessor :seconds
+
+  after_create :update_firebase
 
   def name
     self.wod.name
@@ -25,14 +29,23 @@ class Completion < ActiveRecord::Base
 
   def time
     time = ""
-    millis = self.milliseconds % 1000
     seconds = (self.milliseconds / 1000) % 60
     minutes = (self.milliseconds / 60_000) % 60
-    hours = (self.milliseconds / 3600000) % 24
-    if hours > 0
-      time = "#{hours}:#{minutes}:#{seconds}:#{millis}"
-    else
-      time = "#{minutes}:#{seconds}:#{millis}"
-    end
+    time = "#{minutes}:#{seconds}"
+  end
+
+
+  private
+
+  def update_firebase
+    # post message to firebase
+    # begin
+      Firebase.base_uri = Crossfithub::Application.config.firebase_uri
+      self.user.followers.each do |follower|
+        response = Firebase.push(follower.id, { :name => 'New workout', :priority => 1 })
+      end
+    # rescue
+      logger.error "Unable to update firebase"
+    # end
   end
 end

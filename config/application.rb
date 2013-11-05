@@ -15,6 +15,8 @@ module Crossfithub
   class Application < Rails::Application
 
     config.assets.initialize_on_precompile = false
+    config.firebase_uri = "https://crossfithub.firebaseio.com/"
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
