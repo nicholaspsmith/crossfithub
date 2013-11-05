@@ -58,8 +58,15 @@
       :javascript
         $(document).ready(function(){
           userId = '#{current_user.id}'
-          firebaseListen(userId)
+          firebaseListen(userId) 
         });
+      - current_user.followers.each do |follower|
+        :javascript
+          $(document).ready(function(){
+            followerId = '#{follower.id}'
+            firebaseNotify(followerId)
+          });
+
 
     -# Why is this here?
     = yield :javascript 
