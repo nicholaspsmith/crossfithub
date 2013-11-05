@@ -63,6 +63,8 @@ gem 'binding_of_caller'
 
 gem 'will_paginate', '~> 3.0'
 
+gem 'firebase'
+
 group :development do
   gem 'rspec-rails', '2.13.1'
 end
