@@ -9,7 +9,7 @@
       = render 'follow_form'
 
 
-.large-5.columns
+.large-7.columns
   Completed workouts
   %p
   - @user.completions.each do |completion|
@@ -17,7 +17,7 @@
     / = Wod.find(completion.wod_id).name
     / %p= completion.time
 
-.large-4.columns
+.large-2.columns
   = @user.name
   is following:
   %br
@@ -26,5 +26,5 @@
     = 'nobody :('
   -else
     - @user.followed_users.each do |user|
-      =link_to image_tag(user.get_image, :size => "64x64"), user
+      =link_to image_tag(user.get_image), user
       %p= link_to user.name, user
