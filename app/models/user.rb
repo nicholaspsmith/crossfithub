@@ -67,8 +67,8 @@ class User < ActiveRecord::Base
   end
 
   def get_image
-    if self.profile_pic
-      self.profile_pic
+    if self.profile_pic_url
+      self.profile_pic_url
     else
       "http://placehold.it/240x240"
     end
