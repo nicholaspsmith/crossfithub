@@ -22,7 +22,7 @@
 .large-7.columns
   - @user.followed_user_posts.each do |followed_user_post|
     - followed_user_post.each do |completion|
-      .timeline-block.panel
+      .timeline-block.panel{ 'data-completion-id' => completion.id}
         - @completion = completion
         = render 'completions/show'
 

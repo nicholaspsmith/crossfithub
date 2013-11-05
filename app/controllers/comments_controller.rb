@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    # @completion = Completion.find(params[:completion_id])
+    @completion = Completion.find(params[:completion_id])
     @comment = Comment.new
     @comment.text = params[:comment][:text]
     @comment.user_id = current_user.id
