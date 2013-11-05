@@ -20,7 +20,19 @@ class Completion < ActiveRecord::Base
   def upvotes
     # count how many upvotes this completion has
     # self.votes.where(kind: 1, completion_id: self.id).count
+    # implement later
   end
+
+  def downvotes
+    # also do this later
+    # self.votes.where....something
+  end
+
+
+
+
+
+
 
   def downvotes
     # count how many downvotes this completion has
