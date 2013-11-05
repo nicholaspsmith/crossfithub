@@ -12,7 +12,7 @@
 
 - Stay motivated
 
-*Nick : Project Manager Extraordinaire - set up Followers, Like/Dislike, Database, Dynamic Feed*
+*Nick : Project Manager Extraordinaire - set up Followers, Upvote/Downvote, Database, Dynamic Feed (AJAX)*
 
 *Justin: Style Guru - set up submission of Workout Completions, styling*
 
