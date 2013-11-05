@@ -1,7 +1,7 @@
 <span class="shame-span">
-Shames: <span class="downvotes-count <%= @completion.id %>"><%= @completion.dislikes.count %></span>
+<i class="fi-arrow-down"></i>
+<span class="downvotes-count <%= @completion.id %>"><%= @completion.dislikes.count %>
+</span>
 
--
-
-<%= link_to "Downvote", {:controller =>"completions", :action => "downvote", :id => @completion.id}, :class => 'btn', method: :put, remote: true %>
+<%= link_to "Shame", {:controller =>"completions", :action => "downvote", :id => @completion.id}, :class => 'btn', method: :put, remote: true %>
 </span>
