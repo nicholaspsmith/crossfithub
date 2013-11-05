@@ -34,7 +34,7 @@
           %ul.right
             %li
               = form_tag users_path, method: 'get' do
-                %span
+                %span.search-wrapper
                   = text_field_tag :search, params[:search], {type: 'search'}
             %li
               %a{href: "#"} Settings
