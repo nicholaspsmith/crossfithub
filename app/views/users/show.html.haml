@@ -10,8 +10,6 @@
 
 
 .large-7.columns
-  Completed workouts
-  %p
   - @user.completions.each do |completion|
     = render 'completions/completion', :completion => completion
 
