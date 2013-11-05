@@ -15,6 +15,7 @@
 //= require foundation
 //= require underscore
 //= require backbone
+//= require firebase_listener
 //= require app/util
 //= require app/models/comment
 //= require app/views/comment-view

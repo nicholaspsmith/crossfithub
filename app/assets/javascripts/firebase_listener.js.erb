@@ -1,0 +1,14 @@
+// listen for changes in firebase
+// refresh partial when change occurs
+
+var firebaseListen = function (userId) {
+  var dataRef = new Firebase('https://crossfithub.firebaseio.com/' + userId);
+  dataRef.on('child_added', function(snapshot) {
+    //alert('There is a new workout: ' + snapshot.val());
+    
+    // remove entry from firebase to keep page from reloading infinitely
+    dataRef.remove();
+
+    location.reload();
+  });
+}
