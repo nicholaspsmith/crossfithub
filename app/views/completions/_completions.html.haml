@@ -1,3 +1,4 @@
 - current_user.followed_user_posts.each do |completion|
-  = render :partial => 'completions/completion', :locals => { :completion => completion }
-    
+  .timeline-block.panel{ 'data-completion-id' => completion.id }
+    = render :partial => 'completions/completion', :locals => { :completion => completion }
+      

@@ -9,6 +9,8 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
+// 
+// Delete app/models/* and app/views/*
 //
 //= require jquery
 //= require jquery_ujs

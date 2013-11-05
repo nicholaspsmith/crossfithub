@@ -50,14 +50,17 @@
       - unless alert.blank?
         %p.alert-box.alert= alert
 
-    = javascript_include_tag :all
+    
     .row= yield
+
     = javascript_include_tag "application"
     - if current_user != nil
       :javascript
         $(document).ready(function(){
           userId = '#{current_user.id}'
           firebaseListen(userId)
-          console.log("user id: " + userId)
         });
+
+    -# Why is this here?
+    = yield :javascript 
 

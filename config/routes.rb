@@ -14,12 +14,12 @@ Crossfithub::Application.routes.draw do
 
   resources :wods
 
-
   resources :completions do
     collection do
       put :upvote
       put :downvote
     end
+    resources :comments
   end
 
   post 'user/:id' => 'completions#create'

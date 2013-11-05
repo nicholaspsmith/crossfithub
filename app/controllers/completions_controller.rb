@@ -1,6 +1,5 @@
 class CompletionsController < ApplicationController
   def create
-    # Ew code Smell!!!!
     minutes = params[:completion][:minutes].to_i
     milliseconds = minutes * 60 * 1000
 
@@ -27,26 +26,6 @@ class CompletionsController < ApplicationController
     else
       redirect_to users_path, notice: "Workout not added"
     end
-  end
-
-  def comment
-    @completion = Completion.find(params[:id])
-    new_comment = @completion.comments.create(comment_params)
-    new_comment.user_id = current_user.id
-    new_comment.save!
-
-    render :json => new_comment.to_json, :status => 200
-  end
-
-  def destroy_comment
-    @comment = Completion.where(
-      :id => params[:comment_id],
-      :completion_id => params[:completion_id]
-    ).first
-
-    @comment.destroy if @comment.user_id == current_user.id 
-
-    render :nothing => true, :status => 200
   end
 
   def upvote
