@@ -31,6 +31,9 @@ class User < ActiveRecord::Base
 
   def followed_user_posts
     users = self.followed_users
+    if !users.include? self
+      users << self
+    end
     posts = []
     users.each do |user|
       user.completions.each do |c|
