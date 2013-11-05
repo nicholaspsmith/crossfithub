@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true, length: { maximum: 50 }
 
+  # mount_uploader :attachment, ImageUploader
 
   def followed_user_posts
     users = self.followed_users

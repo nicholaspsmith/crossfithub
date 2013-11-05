@@ -1,18 +1,19 @@
-- provide(:title, @title)
-%aside.span4
-  %section
-    = link_to image_tag(@user.get_image, :size => '290x290'), @user
-    %h1= @user.name
-    %h3= @title
-    %span/
+.small-4.large-4.columns
+  - provide(:title, @title)
+  %aside
+    %section
+      = link_to image_tag(@user.get_image, :size => '290x290'), @user
+      %h1= @user.name
+      %span/
 
-  %section
-    - if @users.any?
-      .user_avatars
-        - @users.each do |user|
-          %p
-            %section
-              = image_tag user.get_image, :size => "120x120"
-              = user.name
+.small-8.large-8.columns
+  %h3= @title
+  - if @users.any?
+    .user_avatars
+      - @users.each do |user|
+        %p
+          %section
+            = image_tag user.get_image, :size => "120x120"
+            = user.name
 
-    = will_paginate
+  = will_paginate
