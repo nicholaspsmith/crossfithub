@@ -40,6 +40,11 @@ gem 'figaro'
 gem 'pry'
 gem 'acts_as_votable', '~> 0.7.1'
 gem 'carrierwave'
+gem 'rmagick'
+gem "fog"
+
+# Gets rid of warning from fog update
+gem 'unf'
 
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'

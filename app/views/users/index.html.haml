@@ -1,6 +1,6 @@
 .large-3.columns
   - if @user.profile_pic?
-    = link_to image_tag(@user.get_image, {class: 'desktop-only'}), current_user
+    = link_to image_tag(@user.profile_pic_url, {class: 'desktop-only'}), current_user
   - else 
     = form_for @user, html: {class: "add-pic"}, remote: true do |f|
       .field

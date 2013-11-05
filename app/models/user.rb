@@ -66,15 +66,15 @@ class User < ActiveRecord::Base
     end
   end
 
-  def get_image
-    if self.profile_pic_url
-      self.profile_pic
-      # binding.pry
+  # def get_image
+  #   if self.profile_pic_url
+  #     self.profile_pic
+  #     # binding.pry
 
-    else
-      "http://placehold.it/240x240"
-    end
-  end
+  #   else
+  #     "http://placehold.it/240x240"
+  #   end
+  # end
 
 
   def following?(other_user)

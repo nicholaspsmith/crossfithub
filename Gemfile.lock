@@ -74,6 +74,7 @@ GEM
     ethon (0.6.1)
       ffi (>= 1.3.0)
       mime-types (~> 1.18)
+    excon (0.28.0)
     execjs (2.0.2)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
@@ -89,6 +90,17 @@ GEM
     firebase (0.1.4)
       json
       typhoeus (>= 0.6.1)
+    fog (1.18.0)
+      builder
+      excon (~> 0.28.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5)
+      ruby-hmac
+    formatador (0.2.4)
     foundation-icons-sass-rails (3.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
@@ -123,6 +135,9 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.2)
     multipart-post (1.2.0)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     oauth2 (0.8.1)
@@ -166,6 +181,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rmagick (2.13.2)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -177,6 +193,7 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
+    ruby-hmac (0.4.0)
     ruby_parser (3.2.2)
       sexp_processor (~> 4.1)
     rubyzip (0.9.9)
@@ -219,6 +236,9 @@ GEM
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    unf (0.1.3)
+      unf_ext
+    unf_ext (0.0.6)
     warden (1.2.3)
       rack (>= 1.0)
     websocket (1.0.7)
@@ -244,6 +264,7 @@ DEPENDENCIES
   factory_girl_rails (= 4.2.1)
   figaro
   firebase
+  fog
   foundation-icons-sass-rails
   haml-rails
   hirb
@@ -254,11 +275,13 @@ DEPENDENCIES
   pg
   pry
   rails (= 4.0.0)
+  rmagick
   rspec-rails (= 2.13.1)
   sass-rails (~> 4.0.0)
   sdoc
   selenium-webdriver (= 2.35.1)
   turbolinks
   uglifier (>= 1.3.0)
+  unf
   will_paginate (~> 3.0)
   zurb-foundation

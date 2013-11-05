@@ -39,7 +39,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    redirect_to root_path
+    @user = User.find(params[:id])
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to root_path, notice: 'Your profile was successfully updated.' }
+        format.json 
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+
+    # redirect_to root_path
   end
 
 end
