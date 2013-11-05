@@ -1,13 +1,13 @@
 .large-3.columns
   - if @user.profile_pic?
     = link_to image_tag(@user.get_image, {class: 'desktop-only'}), current_user
-  - else 
+  - else
     = form_for @user, html: {class: "add-pic"}, remote: true do |f|
       .field
         = f.label "Add a picture!"
         = f.file_field :attachment
       .actions
-      = f.submit "Save picture", {class: 'button small expand'}  
+      = f.submit "Save picture", {class: 'button small expand'}
   %hr
   - if signed_in?
     %section
