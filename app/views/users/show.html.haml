@@ -1,5 +1,5 @@
 .large-3.columns
-  = link_to image_tag(@user.profile_pic), root_path
+  = link_to image_tag(@user.get_image), root_path
   %h3= @user.name
   %hr
   - if signed_in?
@@ -26,5 +26,5 @@
     = 'nobody :('
   -else
     - @user.followed_users.each do |user|
-      =link_to image_tag(user.profile_pic, :size => "64x64"), user
+      =link_to image_tag(user.get_image, :size => "64x64"), user
       %p= link_to user.name, user

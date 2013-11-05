@@ -40,7 +40,8 @@ class User < ActiveRecord::Base
         posts << c
       end
     end
-    posts.sort.reverse
+    # only show 20 most recent updates
+    posts.sort.reverse.first(20)
   end
   
   def feed
@@ -52,6 +53,14 @@ class User < ActiveRecord::Base
       @user = User.where("name @@ :q or fname @@ :q or lname @@ :q", q: query).first
     else
       scoped
+    end
+  end
+
+  def get_image
+    if self.profile_pic
+      self.profile_pic
+    else
+      "http://placehold.it/240x240"
     end
   end
 
