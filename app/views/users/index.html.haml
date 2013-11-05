@@ -6,6 +6,8 @@
       .field
         = f.label "Add a picture!"
         = f.file_field :attachment
+      .actions
+      = f.submit "Save picture", {class: 'button small expand'}  
   %hr
   - if signed_in?
     %section
