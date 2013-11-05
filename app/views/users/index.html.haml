@@ -5,7 +5,7 @@
     = form_for @user, html: {class: "add-pic"}, remote: true do |f|
       .field
         = f.label "Add a picture!"
-        = f.file_field :attachment
+        = f.file_field :profile_pic
       .actions
       = f.submit "Save picture", {class: 'button small expand'}  
   %hr

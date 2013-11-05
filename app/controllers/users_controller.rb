@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
   end
 
+  def update
+    
+  end
+
   def show
     @user = User.find(params[:id])
     @users = User.all
