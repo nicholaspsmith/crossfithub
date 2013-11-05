@@ -1,5 +1,5 @@
 .large-3.columns
-  = link_to image_tag(@user.get_image), current_user
+  = link_to image_tag(@user.get_image, {class: 'desktop-only'}), current_user
   %hr
   - if signed_in?
     %section
@@ -27,5 +27,5 @@
   %p Following:
   - @user.followed_user_list.each do |followed_user|
     = link_to(followed_user) do
-      = image_tag(followed_user.get_image)
+      = image_tag(followed_user.get_image, {class: 'desktop-only'})
       %p= followed_user.name
