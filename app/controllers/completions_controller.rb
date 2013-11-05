@@ -1,6 +1,5 @@
 class CompletionsController < ApplicationController
   def create
-    # Ew code Smell!!!!
     minutes = params[:completion][:minutes].to_i
     milliseconds = minutes * 60 * 1000
 

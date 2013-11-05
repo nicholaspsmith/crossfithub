@@ -1,4 +1,6 @@
 (function () {
+  //console.log('called create.js.erb');
   var allCommentsHtml = "<%= j render('comments/show', completion: @completion) %>";
   $('[data-completion-id=<%= @completion.id %>] .timeline-comments').html(allCommentsHtml);
+  $(".text-input").val('');
 })();

@@ -16,7 +16,6 @@
     %title= content_for?(:title) ? yield(:title) : "CrossFitHub"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/custom.modernizr"
-    = javascript_include_tag "application"
     = csrf_meta_tags
     = javascript_include_tag "https://cdn.firebase.com/v0/firebase.js"
 
@@ -60,7 +59,6 @@
         $(document).ready(function(){
           userId = '#{current_user.id}'
           firebaseListen(userId)
-          console.log("user id: " + userId)
         });
 
     -# Why is this here?

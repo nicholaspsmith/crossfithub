@@ -9,8 +9,8 @@ class CommentsController < ApplicationController
 
     if @comment.save
       respond_to do |format|
-        format.js { render layout: false }
         format.html { redirect_to root_path }
+        format.js { render layout: false }
       end
     end
     # render :json => new_comment.to_json, :status => 200
