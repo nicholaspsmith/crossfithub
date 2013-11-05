@@ -12,10 +12,6 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-  def update
-    
-  end
-
   def show
     @user = User.find(params[:id])
     @users = User.all
@@ -40,6 +36,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
+  end
+
+  def update
+    redirect_to root_path
   end
 
 end

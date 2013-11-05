@@ -6,6 +6,8 @@
       .field
         = f.label "Add a picture!"
         = f.file_field :profile_pic
+        = tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token)
+        = f.file_field :attachment
       .actions
       = f.submit "Save picture", {class: 'button small expand'}  
   %hr
