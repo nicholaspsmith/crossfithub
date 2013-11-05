@@ -1,7 +1,7 @@
 - completion.comments.each do |comment|
 	.timeline-comment
-		.large-2.small-2.columns
+		.large-2.small-2.columns.no-padding
 			= image_tag comment.user.profile_pic
 		.large-10.small-10.columns
-			.timeline-comment 
+			.comment-text
 				= comment.text
