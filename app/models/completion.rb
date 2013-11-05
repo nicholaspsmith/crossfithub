@@ -25,7 +25,7 @@ class Completion < ActiveRecord::Base
 
   def downvotes
     # also do this later
-    # self.votes.where....something
+    # self.votes.where....something`
   end
 
 

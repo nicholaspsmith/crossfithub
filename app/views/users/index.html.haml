@@ -29,5 +29,5 @@
   %p Following:
   - @user.followed_users.each do |followed_user|
     = link_to(followed_user) do
-      = link_to image_tag(followed_user.profile_pic), followed_user
+      = image_tag(followed_user.profile_pic)
       %p= followed_user.name
