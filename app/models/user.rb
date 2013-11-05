@@ -31,13 +31,26 @@ class User < ActiveRecord::Base
 
   def followed_user_posts
     users = self.followed_users
+    if !users.include? self
+      users << self
+    end
     posts = []
     users.each do |user|
       user.completions.each do |c|
         posts << c
       end
     end
-    posts.sort.reverse
+    # only show 20 most recent updates
+    posts.sort.reverse.first(20)
+  end
+
+  def followed_user_list
+    users = []
+    self.followed_users.each do |user|
+      users << user
+    end
+    users.delete(self)
+    users
   end
   
   def feed
@@ -49,6 +62,14 @@ class User < ActiveRecord::Base
       @user = User.where("name @@ :q or fname @@ :q or lname @@ :q", q: query).first
     else
       scoped
+    end
+  end
+
+  def get_image
+    if self.profile_pic
+      self.profile_pic
+    else
+      "http://placehold.it/240x240"
     end
   end
 

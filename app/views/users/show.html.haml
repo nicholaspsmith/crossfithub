@@ -1,31 +1,29 @@
-.row
-  .large-3.columns
-    = link_to image_tag(@user.profile_pic), root_path
-    %h3= @user.name
-    %hr
-    - if signed_in?
-      %section
-        = render 'stats'
-      %section
-        = render 'follow_form'
+.large-3.columns
+  = link_to image_tag(@user.get_image), root_path
+  %h3= @user.name
+  %hr
+  - if signed_in?
+    %section
+      = render 'stats'
+    %section
+      = render 'follow_form'
 
 
-  .large-5.columns
-    Completed workouts
-    %p
-    - @user.completions.each do |completion|
-      = render :partial => 'completions/completion', :locals => { :completion => completion }
-      / = Wod.find(completion.wod_id).name
-      / %p= completion.time
+.large-7.columns
+  Completed workouts
+  %p
+  - @user.completions.each do |completion|
+    = render 'completions/completion', :completion => completion
 
-  .large-4.columns
-    = @user.name
-    is following:
+.large-2.columns
+  = @user.name
+  is following:
+  %br
+  - if @user.followed_user_list
     %br
-    - if @user.followed_users.length < 1
-      %br
-      = 'nobody :('
-    -else
-      - @user.followed_users.each do |user|
-        =link_to image_tag(user.profile_pic, :size => "64x64"), user
-        %p= link_to user.name, user
+    - @user.followed_user_list.each do |user|
+      =link_to image_tag(user.get_image), user
+      %p= link_to user.name, user
+  -else
+    %br
+    = 'nobody :('

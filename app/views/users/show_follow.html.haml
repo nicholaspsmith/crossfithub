@@ -1,0 +1,18 @@
+- provide(:title, @title)
+%aside.span4
+  %section
+    = link_to image_tag(@user.get_image, :size => '290x290'), @user
+    %h1= @user.name
+    %h3= @title
+    %span/
+
+  %section
+    - if @users.any?
+      .user_avatars
+        - @users.each do |user|
+          %p
+            %section
+              = image_tag user.get_image, :size => "120x120"
+              = user.name
+
+    = will_paginate
