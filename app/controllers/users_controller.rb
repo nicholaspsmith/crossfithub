@@ -38,4 +38,8 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  def update
+    redirect_to root_path
+  end
+
 end
