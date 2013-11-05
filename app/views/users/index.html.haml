@@ -1,5 +1,11 @@
 .large-3.columns
-  = link_to image_tag(@user.profile_pic), current_user
+  - if @user.profile_pic?
+    = link_to image_tag(@user.profile_pic), current_user
+  - else 
+    = form_for @user, html: {class: "add-pic"}, remote: true do |f|
+      .field
+        = f.label "Add a picture!"
+        = f.file_field :attachment
   %hr
   - if signed_in?
     %section
