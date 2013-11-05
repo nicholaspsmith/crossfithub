@@ -43,6 +43,15 @@ class User < ActiveRecord::Base
     # only show 20 most recent updates
     posts.sort.reverse.first(20)
   end
+
+  def followed_user_list
+    users = []
+    self.followed_users.each do |user|
+      users << user
+    end
+    users.delete(self)
+    users
+  end
   
   def feed
     Completion.where("user_id = ?", id)

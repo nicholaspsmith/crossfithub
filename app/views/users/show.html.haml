@@ -21,10 +21,10 @@
   = @user.name
   is following:
   %br
-  - if @user.followed_users.length < 1
-    %br
-    = 'nobody :('
-  -else
-    - @user.followed_users.each do |user|
+  - if @user.followed_user_list
+    - @user.followed_user_list.each do |user|
       =link_to image_tag(user.get_image), user
       %p= link_to user.name, user
+  -else
+    %br
+    = 'nobody :('
