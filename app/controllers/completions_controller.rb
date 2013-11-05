@@ -12,7 +12,6 @@ class CompletionsController < ApplicationController
     
     new_completion = Completion.new do |c|
       c.wod_id = wod[:wod_id]
-      #new_completion.milliseconds = milliseconds[:milliseconds]
       c.milliseconds = milliseconds
       c.user_id = current_user.id
     end

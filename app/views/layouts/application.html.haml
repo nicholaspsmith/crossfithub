@@ -53,9 +53,11 @@
     = javascript_include_tag :all
     .row= yield
     = javascript_include_tag "application"
-    :javascript
-      $(document).ready(function(){
-        var userId = '#{current_user.id}'
-        firebaseListen(userId)
-      });
+    - if current_user != nil
+      :javascript
+        $(document).ready(function(){
+          userId = '#{current_user.id}'
+          firebaseListen(userId)
+          console.log("user id: " + userId)
+        });
 

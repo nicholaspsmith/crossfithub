@@ -39,38 +39,32 @@ membership.role = "admin"
 membership.save
 
 # Create Completions
-completion = Completion.create
+completion = Completion.new
 completion.wod_id = fran.id
 completion.milliseconds = 152000
-completion.save
 
-completion2 = Completion.create
+completion2 = Completion.new
 completion2.wod_id = annie.id
 completion2.milliseconds = 234394
-completion2.save
 
-completion3 = Completion.create
+completion3 = Completion.new
 completion3.wod_id = barbara.id
 completion3.milliseconds = 137539
-completion3.save
 
 
-completion4 = Completion.create
+completion4 = Completion.new
 completion4.wod_id = barbara.id
 completion4.milliseconds = 139502
-completion4.save
 
 
-completion5 = Completion.create
+completion5 = Completion.new
 completion5.wod_id = cindy.id
 completion5.milliseconds = 1239585
-completion5.save
 
 
-completion6 = Completion.create
+completion6 = Completion.new
 completion6.wod_id = cindy.id
 completion6.milliseconds = 315951
-completion6.save
 
 
 # associate completion with user
@@ -92,6 +86,16 @@ clay.save
 gamble.completions << completion6
 gamble.save
 
+## Save the completions
+## It is done here because when they are saved they need
+## to know who their user is
+## check the completion model "after_create" function(s)
+completion.save
+completion2.save
+completion3.save
+completion4.save
+completion5.save
+completion6.save
 
 # Make some likes and dislikes
 
