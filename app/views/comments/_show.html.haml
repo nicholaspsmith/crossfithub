@@ -1,7 +1,9 @@
 - completion.comments.each do |comment|
-	.timeline-comment
-		.large-2.small-2.columns.no-padding
-			= image_tag comment.user.get_image
-		.large-10.small-10.columns
-			.comment-text
-				= comment.text
+  .timeline-comment
+    .large-2.columns.no-padding.desktop-only
+      = image_tag comment.user.get_image
+    .large-10.small-12.columns
+      .comment-author
+        = comment.user.name
+      .comment-text
+        = comment.text
