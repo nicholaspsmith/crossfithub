@@ -14,6 +14,6 @@
 
 *Nick : Project Manager Extraordinaire - set up Followers, Upvote/Downvote, Database, Dynamic Feed (AJAX)*
 
-*Justin: Style Guru - set up submission of Workout Completions, styling*
+*Justin: Style Guru - set up submission of Workout Completions, site styling CSS/Foundation*
 
-*Nicole : Dynamic Planning Goddess - set up Authentication, integrated dynamic comments with AJAX*
+*Nicole : Dynamic Planning Goddess - set up Authentication, integrated dynamic comments with AJAX, images using carrierwave*
