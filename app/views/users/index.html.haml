@@ -26,7 +26,7 @@
 
 .large-2.columns
   %p Following:
-  - @user.followed_users.each do |followed_user|
+  - @user.followed_user_list.each do |followed_user|
     = link_to(followed_user) do
       = image_tag(followed_user.get_image)
       %p= followed_user.name
