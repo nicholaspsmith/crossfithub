@@ -38,4 +38,5 @@
   - @user.followed_user_list.each do |followed_user|
     = link_to(followed_user) do
       = image_tag(followed_user.get_image, {class: 'desktop-only'})
-      %p= followed_user.name
+      .followed-user
+        %p= followed_user.name

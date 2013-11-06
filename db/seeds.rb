@@ -24,7 +24,7 @@ danes.save
 # Create Users
 nick = User.create(name:"Nick Smith",fname:"Nick",lname:"Smith",profile_pic:"https://scontent-a-dfw.xx.fbcdn.net/hphotos-frc3/1395212_10202581883612451_466524952_n.jpg",email:"npsmith1990@gmail.com",password:"a;sldkfjgh")
 justin = User.create(name:"Justin Blaisdell",fname:"Justin",lname:"Blaisdell",profile_pic:"https://pbs.twimg.com/profile_images/1811301192/image.jpg",email:"jsblaisdell@gmail.com",password:"password")
-nicole = User.create(name:"Nicole Pank",fname:"Nicole",lname:"Pank",profile_pic:"https://scontent-b-dfw.xx.fbcdn.net/hphotos-ash3/1174903_828444650107_128913837_n.jpg",email:"damnit@gmail.com",password:"password")
+nicole = User.create(name:"Nicole Pank",fname:"Nicole",lname:"Pank",profile_pic:"https://pbs.twimg.com/profile_images/378800000703467992/280f5968237708c5ca88526b16932328.jpeg",email:"damnit@gmail.com",password:"password")
 clay = User.create(name:"Clay Stewart",fname:"Clay",lname:"Stewart",profile_pic:"https://scontent-a-dfw.xx.fbcdn.net/hphotos-ash4/1001196_649788227468_1573908158_n.jpg",email:"clamstew@gmail.com",password:"password")
 ami = User.create(name:"Ami Dave",fname:"Ami",lname:"Dave",profile_pic:"https://scontent-b-dfw.xx.fbcdn.net/hphotos-ash4/1381259_214908285345527_675206342_n.jpg",email:"ami@gmail.com",password:"password")
 gamble = User.create(name:"Gamble McAdam",fname:"Gamble",lname:"McAdam",profile_pic:"https://pbs.twimg.com/profile_images/378800000436563227/566d98b441ab109a776d1b4d26518ea0.jpeg",email:"gamble@gmail.com",password:"password")
