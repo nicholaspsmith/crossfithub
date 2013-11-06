@@ -22,7 +22,8 @@
     %br
     - @user.followed_user_list.each do |user|
       =link_to image_tag(user.get_image, {class: 'desktop-only'}), user
-      %p= link_to user.name, user
+      .centered
+        %p= link_to user.name, user
   -else
     %br
     = 'nobody :('
