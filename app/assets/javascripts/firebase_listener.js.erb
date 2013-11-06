@@ -8,7 +8,9 @@ var firebaseListen = function (userId) {
     // remove entry from firebase to keep page from reloading infinitely
     dataRef.remove();
 
-    location.reload();
+    // should render partial instead of reloading entire page
+    //$('#completions').html("<%#= escape_javascript render 'completions/completions' %>")
+    //location.reload();
   });
 
 }

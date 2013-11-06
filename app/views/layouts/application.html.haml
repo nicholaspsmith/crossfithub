@@ -19,6 +19,7 @@
     = csrf_meta_tags
     = javascript_include_tag "https://cdn.firebase.com/v0/firebase.js"
 
+
   %body{ :class => ('logged-out' unless current_user) }
 
     - if current_user
@@ -68,6 +69,5 @@
           });
 
 
-    -# Why is this here?
     = yield :javascript 
 
