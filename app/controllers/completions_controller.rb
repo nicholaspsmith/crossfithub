@@ -6,7 +6,6 @@ class CompletionsController < ApplicationController
     seconds = params[:completion][:seconds].to_i
     milliseconds += seconds * 1000
     
-    #milliseconds= params[:completion]
     wod = params[:completion]
     
     new_completion = Completion.new do |c|
@@ -22,7 +21,6 @@ class CompletionsController < ApplicationController
         format.html { redirect_to users_path, notice: "Workout added!" }
         format.js
       end
-
     else
       redirect_to users_path, notice: "Workout not added"
     end

@@ -13,7 +13,6 @@ class CommentsController < ApplicationController
         format.js { render layout: false }
       end
     end
-    # render :json => new_comment.to_json, :status => 200
   end
 
   def delete
