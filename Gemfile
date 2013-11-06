@@ -67,6 +67,8 @@ gem 'will_paginate', '~> 3.0'
 
 gem 'firebase'
 
+gem 'rails_12factor', group: :production
+
 group :development do
   gem 'rspec-rails', '2.13.1'
 end
