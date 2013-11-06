@@ -22,7 +22,7 @@ danes.wods << fran
 danes.save
 
 # Create Users
-nick = User.create(name:"Nick Smith",fname:"Nick",lname:"Smith",profile_pic:"https://scontent-a-dfw.xx.fbcdn.net/hphotos-frc3/1395212_10202581883612451_466524952_n.jpg",email:"npsmith1990@gmail.com",password:"a;sldkfjgh")
+nick = User.create(name:"Nick Smith",fname:"Nick",lname:"Smith",profile_pic:"https://crossfithub.herokuapp.com/images/nickhead.jpg",email:"npsmith1990@gmail.com",password:"a;sldkfjgh")
 justin = User.create(name:"Justin Blaisdell",fname:"Justin",lname:"Blaisdell",profile_pic:"https://pbs.twimg.com/profile_images/1811301192/image.jpg",email:"jsblaisdell@gmail.com",password:"password")
 nicole = User.create(name:"Nicole Pank",fname:"Nicole",lname:"Pank",profile_pic:"https://pbs.twimg.com/profile_images/378800000703467992/280f5968237708c5ca88526b16932328.jpeg",email:"damnit@gmail.com",password:"password")
 clay = User.create(name:"Clay Stewart",fname:"Clay",lname:"Stewart",profile_pic:"https://scontent-a-dfw.xx.fbcdn.net/hphotos-ash4/1001196_649788227468_1573908158_n.jpg",email:"clamstew@gmail.com",password:"password")
