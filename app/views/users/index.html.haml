@@ -1,6 +1,7 @@
 .large-3.columns
   - if @user.profile_pic?
     = link_to image_tag(@user.get_image, {class: 'desktop-only'}), current_user
+    %h3= @user.name
   - else 
     = form_for @user, html: {class: "add-pic"}, remote: true do |f|
       .field
@@ -24,7 +25,7 @@
       = f.text_field :seconds
     .field
       = f.label :wod_id
-      = f.collection_select :wod_id, Wod.all.collect, :id, :name, include_blank: false
+      = f.collection_select :wod_id, Wod.all.collect, :id, :name, include_blank: false, html: {id: "customDropdown"}
     .actions
       = f.submit "Save", {class: 'button small expand'}
 
