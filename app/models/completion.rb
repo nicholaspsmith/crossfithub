@@ -18,22 +18,6 @@ class Completion < ActiveRecord::Base
     self.wod.name
   end
 
-  def upvotes
-    # count how many upvotes this completion has
-    # self.votes.where(kind: 1, completion_id: self.id).count
-    # implement later
-  end
-
-  def downvotes
-    # also do this later
-    # self.votes.where....something`
-  end
-
-
-
-
-
-
 
   def downvotes
     # count how many downvotes this completion has
@@ -54,9 +38,11 @@ class Completion < ActiveRecord::Base
     # post message to firebase
     # begin
       Firebase.base_uri = Crossfithub::Application.config.firebase_uri
-      self.user.followers.each do |follower|
-        # give it completion id
-        response = Firebase.push(follower.id, { :name => 'New workout', :priority => 1 })
+      if self.user
+        self.user.followers.each do |follower|
+          # give it completion id
+          response = Firebase.push(follower.id, { :name => 'New workout', :priority => 1 })
+        end
       end
     # rescue
       logger.error "Unable to update firebase"
