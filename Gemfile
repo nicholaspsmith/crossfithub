@@ -72,6 +72,7 @@ gem 'firebase'
 
 group :production do
   gem 'rails_12factor'
+  gem 'foundation-icons-sass-rails'
 end
 
 group :development do
