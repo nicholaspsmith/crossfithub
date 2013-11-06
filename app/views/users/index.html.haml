@@ -1,7 +1,9 @@
 .large-3.columns
   - if @user.profile_pic?
-    = link_to image_tag(@user.get_image, {class: 'desktop-only'}), current_user
-    %h3= @user.name
+    .profile-pic.desktop-only
+      = link_to image_tag(@user.get_image, {class: 'desktop-only'}), current_user
+    .centered
+      %h3= @user.name
   - else 
     = form_for @user, html: {class: "add-pic"}, remote: true do |f|
       .field
@@ -12,7 +14,7 @@
       = f.submit "Save picture", {class: 'button small expand'}  
   %hr
   - if signed_in?
-    %section
+    %div.centering
       = render 'users/stats'
 
   %h4 New Workout:
@@ -38,5 +40,5 @@
   - @user.followed_user_list.each do |followed_user|
     = link_to(followed_user) do
       = image_tag(followed_user.get_image, {class: 'desktop-only'})
-      .followed-user
+      .centered
         %p= followed_user.name

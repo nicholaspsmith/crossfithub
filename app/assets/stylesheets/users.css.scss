@@ -16,8 +16,16 @@
   }
 }
 
+.profile-pic {
+  position: relative;
+  border: 2px solid hsl(39, 80%, 50%);
+  padding: 8px;
+  border-radius: 50%;
+}
+
 .timeline-block {
   @extend %cf;
+  border-radius: 8px;
 }
 
 .timeline-details {

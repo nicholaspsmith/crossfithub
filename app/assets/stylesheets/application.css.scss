@@ -17,8 +17,32 @@
 
 
 img {
+  box-shadow: 0 0 2px black;
   border-radius: 50%;
 }
-.followed-user {
+
+.centered {
   text-align: center;
+  margin: 0 auto;
+}
+
+.follow-links {
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
+
+}
+
+.inner-followers {
+  margin: 0 auto;
+  height: 20px;
+}
+
+.following {
+  text-align: center;
+}
+
+.centering {
+  text-align: center;
+  margin: 0 auto;
 }

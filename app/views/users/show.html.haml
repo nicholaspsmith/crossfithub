@@ -1,5 +1,6 @@
 .large-3.columns
-  = link_to image_tag(@user.get_image, {class: 'desktop-only'}), root_path
+  .profile-pic.desktop-only
+    = link_to image_tag(@user.get_image, {class: 'desktop-only'}), root_path
   %h3= @user.name
   %hr
   - if signed_in?
