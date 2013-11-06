@@ -10,7 +10,7 @@ var firebaseListen = function (userId) {
 
     // should render partial instead of reloading entire page
 
-    $.get('https://crossfithub.herokuapp.com/completions').done(function( data ) {
+    $.get('http://crossfithub.herokuapp.com/completions').done(function( data ) {
       $('#completions').html(data)
     })
     //location.reload();
