@@ -9,16 +9,19 @@ var firebaseListen = function (userId) {
     dataRef.remove();
 
     // should render partial instead of reloading entire page
-    //$('#completions').html("<%#= escape_javascript render 'completions/completions' %>")
+
+    $.get('http://localhost:3000/completions').done(function( data ) {
+      $('#completions').html(data)
+    })
     //location.reload();
   });
 
 }
 
 // Followers of current user
-var firebaseNotify = function (userId) {
-  var dataRef = new Firebase('https://crossfithub.firebaseio.com/' + userId);
-  dataRef.on('child_added', function(snapshot) {
-    dataRef.remove();
-  });
-}
+// var firebaseNotify = function (userId) {
+//   var dataRef = new Firebase('https://crossfithub.firebaseio.com/' + userId);
+//   dataRef.on('child_added', function(snapshot) {
+//     dataRef.remove();
+//   });
+// }

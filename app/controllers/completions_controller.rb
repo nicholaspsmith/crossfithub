@@ -50,5 +50,15 @@ class CompletionsController < ApplicationController
     end
   end
 
+  def index
+    render layout: false
+  end
+
+  def show
+    # find completion by id
+    @completion = Completion.find(params[:id])
+
+    render layout: false
+  end
 
 end

@@ -55,6 +55,7 @@ class Completion < ActiveRecord::Base
     # begin
       Firebase.base_uri = Crossfithub::Application.config.firebase_uri
       self.user.followers.each do |follower|
+        # give it completion id
         response = Firebase.push(follower.id, { :name => 'New workout', :priority => 1 })
       end
     # rescue

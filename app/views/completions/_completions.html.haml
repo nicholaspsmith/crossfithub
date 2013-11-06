@@ -1,4 +1,5 @@
 - current_user.followed_user_posts.each do |completion|
+  - @completion = completion
   %div{ 'data-completion-id' => completion.id }
-    = render :partial => 'completions/completion', :locals => { :completion => completion }
+    = render :partial => 'completions/completion'
 

@@ -61,12 +61,7 @@
           userId = '#{current_user.id}'
           firebaseListen(userId) 
         });
-      - current_user.followers.each do |follower|
-        :javascript
-          $(document).ready(function(){
-            followerId = '#{follower.id}'
-            firebaseNotify(followerId)
-          });
+
 
 
     = yield :javascript 
