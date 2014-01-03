@@ -14,6 +14,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require foundation
 //= require underscore
 //= require backbone
