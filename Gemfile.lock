@@ -244,7 +244,7 @@ DEPENDENCIES
   capybara (= 2.1.0)
   carrierwave
   coffee-rails (~> 4.0.0)
-  compass-rails (~> 2.0.alpha.0)
+  compass-rails
   devise
   factory_girl_rails (= 4.2.1)
   figaro
