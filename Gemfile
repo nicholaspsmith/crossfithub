@@ -34,7 +34,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'compass-rails'
+gem 'compass-rails', '~> 1.1.2'
 gem 'zurb-foundation'
 gem 'foundation-icons-sass-rails'
 gem 'devise'
