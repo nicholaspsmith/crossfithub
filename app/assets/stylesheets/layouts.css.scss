@@ -3,6 +3,7 @@
 $bgimage: "shattered";
 
 .top-bar {
+  margin-bottom: 20px;
   text-shadow: 0 1px 1px rgba(0,0,0,.5);
   box-shadow: 0 1px 5px rgba(0,0,0,.75);
   h1 {
@@ -22,6 +23,7 @@ $bgimage: "shattered";
     width: 100%;
   }
 }
+
 
 .top-bar-section {
   ul {
