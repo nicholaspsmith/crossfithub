@@ -8,7 +8,7 @@
   }
   input {
     box-shadow: 1px 1px 3px rgba(0,0,0,.5) inset;
-    border: 1px solid hsl(39, 75%, 45%);
+    border: 1px solid rgba(0, 5, 94, 1.0000);
     border-radius: 1em;
   }
 }
@@ -19,6 +19,16 @@
     display: inline-block;
     width: 100%;
   }
+}
+
+.top-bar-section {
+  ul {
+    background: none;
+  }
+  li a:not(.button){
+    background: none;
+  }
+
 }
 
 body {

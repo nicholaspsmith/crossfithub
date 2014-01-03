@@ -45,3 +45,36 @@ img {
   text-align: center;
   margin: 0 auto;
 }
+
+
+#titulo {
+  float: none;
+  text-align: center;
+}
+ul.right {
+  visibility: hidden;
+}
+
+@media (min-width: 350px) {
+  #titulo {
+    float: left;
+  }
+  ul.right {
+    visibility: visible;
+  }
+  .search-wrapper {
+    visibility: hidden;
+  }
+  ul.right li:first-child {
+    width: 0;
+  }
+}
+
+@media (min-width: 530px) {
+  .search-wrapper {
+    visibility: visible;
+  }
+  ul.right li:first-child {
+    width: 180px;
+  }
+}
