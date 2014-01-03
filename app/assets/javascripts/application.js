@@ -24,5 +24,4 @@
 //= require app/views/comment-wall-view
 //= require app/views/comment-input-view
 //= require app/views/vote-count-view
-
 $(function(){ $(document).foundation(); });
