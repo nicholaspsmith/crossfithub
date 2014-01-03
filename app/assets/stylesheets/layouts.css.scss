@@ -1,5 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Arvo");
 
+$bgimage: "shattered";
+
 .top-bar {
   text-shadow: 0 1px 1px rgba(0,0,0,.5);
   box-shadow: 0 1px 5px rgba(0,0,0,.75);
@@ -32,6 +34,6 @@
 }
 
 body {
-  background: url('https://crossfithub.herokuapp.com/images/bgs/subtle_grunge/subtle_grunge.png') no-repeat center center fixed;
+  background: url('https://crossfithub.herokuapp.com/images/bgs/#{$bgimage}/#{$bgimage}.png') no-repeat center center fixed;
   background-repeat: repeat;
 }
