@@ -2,8 +2,8 @@
   - provide(:title, @title)
   %aside
     %section
-      = link_to image_tag(@user.get_image, :size => '290x290'), @user
-      %h1= @user.name
+      = link_to image_tag(@user.get_image, :size => '290x290', :class => "user-img"), @user
+      %h1.username= @user.name
       %span/
 
 .small-8.large-8.columns
@@ -13,7 +13,7 @@
       - @users.each do |user|
         %p
           %section
-            = image_tag user.get_image, :size => "120x120"
+            = image_tag user.get_image, :size => "120x120", :class => "user-img"
             = user.name
 
   = will_paginate

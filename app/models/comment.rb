@@ -12,8 +12,4 @@ class Comment < ActiveRecord::Base
       text: self.text
     }
   end
-
-  # def create
-    
-  # end
 end

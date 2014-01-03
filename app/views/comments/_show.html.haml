@@ -1,7 +1,7 @@
 - completion.comments.each do |comment|
   .timeline-comment
     .large-2.small-2.columns.no-padding
-      = image_tag comment.user.get_image
+      = image_tag  comment.user.get_image, :class => "user-img"
     .large-12.small-12.columns
       .comment-author
         = comment.user.name
