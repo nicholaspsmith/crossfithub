@@ -2,18 +2,18 @@
 
 *Social Media for Crossfit Enthusiasts*
 
-- Keep track of your WOD times
+- Keep track of your Wordout of the Day (WOD) times
 
-- Follow your friends
+- Follow your friends' WODs
+
+- Vote on and leave comments for friends' WOD
 
 - Earn badges for achieving new records
 
-- Share your progress on Facebook
+- Stay motivated, stay healthy, stay fit.
 
-- Stay motivated
+*Nick : Back End Engineer - set up following/followers, Upvote/Downvote, Database (Postgres), Dynamic Feed (AJAX with Firebase backing)*
 
-*Nick : Project Manager Extraordinaire - set up Followers, Upvote/Downvote, Database, Dynamic Feed (AJAX)*
+*Justin: Designer - Workout Completions, site styling CSS/Foundation*
 
-*Justin: Style Guru - set up submission of Workout Completions, site styling CSS/Foundation*
-
-*Nicole : Dynamic Planning Goddess - set up Authentication, integrated dynamic comments with AJAX, images using carrierwave*
+*Nicole : Front End Engineer - Authentication, Dynamic comments using AJAX*
