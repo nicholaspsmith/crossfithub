@@ -14,6 +14,6 @@
 
 *Nick : Back End Engineer - set up following/followers, Upvote/Downvote, Database (Postgres), Dynamic Feed (AJAX with Firebase backing)*
 
-*Justin: Designer - Workout Completions, site styling CSS/Foundation*
+*Justin: Designer - Styling CSS/Foundation*
 
-*Nicole : Front End Engineer - Authentication, Dynamic comments using AJAX*
+*Nicole : Front End Engineer - Authentication
